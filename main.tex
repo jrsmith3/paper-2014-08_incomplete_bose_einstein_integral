@@ -8,9 +8,10 @@
 % ================================
 \usepackage{graphicx}
 \graphicspath{{../pics/}}
-% \usepackage{showkeys}
+\usepackage{showkeys}
 % \usepackage{endfloat}
 % \usepackage{url}
+\usepackage{amsmath}
 \usepackage[version=3]{mhchem}
 
 % Document metadata
@@ -111,11 +112,11 @@ In the present case,
 
 Mirroring the above progression for the original integral (ignoring the prefactor for the time being)
 
-\begin{equation} \label{eq:07}
-\int_{x_{g}}^{\infty} \frac{x^{2}}{\exp(x) - 1} dx = \int_{x_{g}}^{\infty} \frac{x^{2} \exp(-x)}{1 - \exp(-x)} dx
-= \int_{x_{g}}^{\infty} x^{2} \sum_{k = 1}^{\infty} \exp(-kx) dx
-= \sum_{k = 1}^{\infty} \int_{x_{g}}^{\infty} x^{2} \exp(-kx) dx
-\end{equation}
+\begin{align} \label{eq:07}
+\int_{x_{g}}^{\infty} \frac{x^{2}}{\exp(x) - 1} dx &= \int_{x_{g}}^{\infty} \frac{x^{2} \exp(-x)}{1 - \exp(-x)} dx \\
+ &= \int_{x_{g}}^{\infty} x^{2} \sum_{k = 1}^{\infty} \exp(-kx) dx \\
+ &= \sum_{k = 1}^{\infty} \int_{x_{g}}^{\infty} x^{2} \exp(-kx) dx \\
+\end{align}
 
 Consider a general term in the series given in Eq. \ref{eq:07}
 
@@ -147,10 +148,10 @@ Now consider the integral from 0 to $x_{g}$ and change variable so the integral 
 y \equiv \frac{x}{x_{g}}
 \end{equation}
 
-\begin{equation} \label{eq:13}
-\int_{0}^{x_{g}} x^{2} \exp(-kx) dx = \int_{0}^{1} (x_{g}y)^{2} \exp(-kx_{g}y) x_{g} dy
-= x_{g}^{3} \int_{0}^{1} y^{2} \exp(-kx_{g}y) dy
-\end{equation}
+\begin{align} \label{eq:13}
+\int_{0}^{x_{g}} x^{2} \exp(-kx) dx &= \int_{0}^{1} (x_{g}y)^{2} \exp(-kx_{g}y) x_{g} dy \\
+ &= x_{g}^{3} \int_{0}^{1} y^{2} \exp(-kx_{g}y) dy
+\end{align}
 
 Integral 650 of the CRC \cite{} is
 
@@ -178,23 +179,12 @@ Substitute the results of Eq. \ref{} and \ref{} into Eq. \ref{}
 
 \noindent which can be substituted back into Eq. \ref{}.
 
-\begin{equation} \label{eq:18}
-Q(\nu_{g}, T) = \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{k = 1}^{\infty} \int_{x_{g}}^{\infty} x^{2} \exp(-kx) dx
-\end{equation}
-
-\noindent NOTE: the following three equations should be combined into the above equation, Eq. \ref{eq:18}. I'm giving them labels anyway.
-
-\begin{equation} \label{eq:19}
-= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{k = 1}^{\infty} \frac{2}{k^{3}} \exp(-kx_{g}) \left( 1 + kx_{g} + \frac{ (kx_{g})^{2} }{2} \right)
-\end{equation}
-
-\begin{equation} \label{eq:20}
-= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{k = 1}^{\infty} \left( \frac{2}{k^{3}} \exp(-kx_{g}) + \frac{2x_{g}}{k^{2}} \exp(-kx_{g}) + \frac{2x_{g}^{2}}{k} \exp(-kx_{g}) \right)
-\end{equation}
-
-\begin{equation} \label{eq:21}
-= \frac{4\pi (kT)^{3}}{h^{3} c^{2}} \left(\sum_{k = 1}^{\infty} \frac{\exp(-x_{g})^{k}}{k^{3}} + x_{g} \sum_{k = 1}^{\infty} \frac{\exp(-x_{g})^{k}}{k^{2}} + x_{g}^{2} \sum_{k = 1}^{\infty} \frac{\exp(-x_{g})^{k}}{k} \right) 
-\end{equation}
+\begin{align} \label{eq:18}
+Q(\nu_{g}, T) &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{k = 1}^{\infty} \int_{x_{g}}^{\infty} x^{2} \exp(-kx) dx \\
+ &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{k = 1}^{\infty} \frac{2}{k^{3}} \exp(-kx_{g}) \left( 1 + kx_{g} + \frac{ (kx_{g})^{2} }{2} \right) \\
+ &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{k = 1}^{\infty} \left( \frac{2}{k^{3}} \exp(-kx_{g}) + \frac{2x_{g}}{k^{2}} \exp(-kx_{g}) + \frac{2x_{g}^{2}}{k} \exp(-kx_{g}) \right) \\
+ &= \frac{4\pi (kT)^{3}}{h^{3} c^{2}} \left(\sum_{k = 1}^{\infty} \frac{\exp(-x_{g})^{k}}{k^{3}} + x_{g} \sum_{k = 1}^{\infty} \frac{\exp(-x_{g})^{k}}{k^{2}} + x_{g}^{2} \sum_{k = 1}^{\infty} \frac{\exp(-x_{g})^{k}}{k} \right) \\
+\end{align}
 
 The polylogarithm is defined as
 
