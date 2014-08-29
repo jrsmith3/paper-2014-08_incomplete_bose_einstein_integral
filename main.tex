@@ -108,15 +108,15 @@ The geometric series can be rearranged in order to replace the fractional term o
 \noindent Note that $\exp(-x) < 1$ since $0 < x < \infty$; subsituting this exponentiation for $r$ into Eq. \ref{eq:04} yields
 
 \begin{align} \label{eq:06}
-\frac{\exp(-x)}{1 - \exp(-x)} &= \sum_{n = 1}^{\infty} \exp(-x)^{n} \\
+\frac{\exp(-x)}{1 - \exp(-x)} &= \sum_{n = 1}^{\infty} \exp(-x)^{n} \nonumber \\
  &= \sum_{n = 1}^{\infty} \exp(-nx)
 \end{align}
 
 The sum from Eq. \ref{eq:06} can be substituted into the expression in Eq. \ref{eq:01} to yield
 
 \begin{align} \label{eq:07}
-Q(\nu_{g}, T) &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \int_{x_{g}}^{\infty} x^{2} \frac{\exp(-x)}{1 - \exp(-x)} dx \\
- &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \int_{x_{g}}^{\infty} x^{2} \sum_{n = 1}^{\infty} \exp(-nx) dx \\
+Q(\nu_{g}, T) &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \int_{x_{g}}^{\infty} x^{2} \frac{\exp(-x)}{1 - \exp(-x)} dx \nonumber \\
+ &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \int_{x_{g}}^{\infty} x^{2} \sum_{n = 1}^{\infty} \exp(-nx) dx \nonumber \\
  &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \int_{x_{g}}^{\infty} x^{2} \exp(-nx) dx
 \end{align}
 
@@ -151,7 +151,7 @@ y \equiv \frac{x}{x_{g}}
 \end{equation}
 
 \begin{align} \label{eq:13}
-\int_{0}^{x_{g}} x^{2} \exp(-nx) dx &= \int_{0}^{1} (x_{g}y)^{2} \exp(-nx_{g}y) x_{g} dy \\
+\int_{0}^{x_{g}} x^{2} \exp(-nx) dx &= \int_{0}^{1} (x_{g}y)^{2} \exp(-nx_{g}y) x_{g} dy \nonumber \\
  &= x_{g}^{3} \int_{0}^{1} y^{2} \exp(-nx_{g}y) dy
 \end{align}
 
@@ -176,15 +176,15 @@ x_{g}^{3} \int_{0}^{1} y^{2} \exp(-nx_{g}y) dy = \frac{2!}{n^{3}} \left( 1 - \ex
 Subtracting Eq. \ref{eq:16} from Eq. \ref{eq:11} as in Eq. \ref{eq:10} yields
 
 \begin{align} \label{eq:17}
-\int_{x_{g}}^{\infty} x^{2} \exp(-nx) dx &= \frac{2}{n^{3}} \exp(-nx_{g}) \left( 1 + nx_{g} + \frac{ (nx_{g})^{2} }{2} \right) \\
+\int_{x_{g}}^{\infty} x^{2} \exp(-nx) dx &= \frac{2}{n^{3}} \exp(-nx_{g}) \left( 1 + nx_{g} + \frac{ (nx_{g})^{2} }{2} \right) \nonumber \\
  &= \frac{2}{n^{3}} \exp(-nx_{g}) + \frac{2x_{g}}{n^{2}} \exp(-nx_{g}) + \frac{x_{g}^{2}}{n} \exp(-nx_{g})
 \end{align}
 
 \noindent which can be substituted back into Eq. \ref{eq:07} to yield
 
 \begin{align} \label{eq:18}
-Q(\nu_{g}, T) &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \int_{x_{g}}^{\infty} x^{2} \exp(-nx) dx \\
- &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \left( \frac{2}{n^{3}} \exp(-nx_{g}) + \frac{2x_{g}}{n^{2}} \exp(-nx_{g}) + \frac{2x_{g}^{2}}{n} \exp(-nx_{g}) \right) \\
+Q(\nu_{g}, T) &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \int_{x_{g}}^{\infty} x^{2} \exp(-nx) dx \nonumber \\
+ &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \left( \frac{2}{n^{3}} \exp(-nx_{g}) + \frac{2x_{g}}{n^{2}} \exp(-nx_{g}) + \frac{2x_{g}^{2}}{n} \exp(-nx_{g}) \right) \nonumber \\
  &= \frac{4\pi (kT)^{3}}{h^{3} c^{2}} \left(\sum_{n = 1}^{\infty} \frac{\exp(-x_{g})^{n}}{n^{3}} + x_{g} \sum_{n = 1}^{\infty} \frac{\exp(-x_{g})^{n}}{n^{2}} + x_{g}^{2} \sum_{n = 1}^{\infty} \frac{\exp(-x_{g})^{n}}{n} \right)
 \end{align}
 
