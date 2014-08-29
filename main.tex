@@ -29,13 +29,17 @@ pdfkeywords={},
 pdfcreator={pdfTeX}
 }
 
+% Define polylogarithm notation for reuse
+% =======================================
+\newcommand{\Li}{\textrm{Li}}
+
 % Label index
 % ===========
 % eq:
 % --
 % 00,01,02,03,04,05,06,07,08,09,
 % 10,11,12,13,14,15,16,17,18,19,
-% 20,21,22,23,24,
+% 20,21,22,23,24,25,
 % 
 % fig
 % ---
@@ -71,7 +75,7 @@ Q(\nu_{g}, T) = \frac{2\pi}{c^{2}} \int_{\nu_{g}}^{\infty} \frac{\nu^{2}}{\exp\l
 
 \noindent where $c$ is the speed of light in vacuum, $h$ is Planck's constant, $k$ is Boltzmann's constant, and $\nu$ is the frequency of a photon.
 
-The variable an be changed to simplify the integral as shown in Eq. \ref{eq:01}
+The variable can be changed to simplify the integral as shown in Eq. \ref{eq:01}
 
 \begin{equation} \label{eq:01}
 Q(\nu_{g}, T) = \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \int_{x_{g}}^{\infty} \frac{x^{2}}{\exp(x) - 1} dx
@@ -83,38 +87,35 @@ Q(\nu_{g}, T) = \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \int_{x_{g}}^{\infty} \frac{x^
 x_{g}kT = h \nu_{g} = q V_{g}
 \end{equation}
 
-\noindent and $q$ is the magnitude of the electron charge and $V_{g}$ is the bandgap of the semiconductor.
+\noindent and $q$ is the magnitude of the electron charge and $V_{g}$ is the bandgap of the semiconductor. The exponential term can be factored from the denominator of the integrand to yield Eq. \ref{eq:25}
 
-Note the series
+\begin{equation} \label{eq:25}
+Q(\nu_{g}, T) = \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \int_{x_{g}}^{\infty} x^{2} \frac{\exp(-x)}{1 - \exp(-x)} dx
+\end{equation}
+
+The geometric series can be rearranged in order to replace the fractional term of the integrand of Eq. \ref{eq:25} with a sum. The geometric series is given in Eq. \ref{eq:03}
 
 \begin{equation} \label{eq:03}
-\sum_{n = 0}^{\infty} r^{n} = \frac{1}{1-r}, |r| < 1
+\frac{1}{1-r} = \sum_{n = 0}^{\infty} r^{n}, \qquad |r| < 1
 \end{equation}
 
-\noindent Multiplying through by $r$,
+\noindent Moving the first term of the sum to the left hand side and simplifying yields
 
 \begin{equation} \label{eq:04}
-\sum_{n = 1}^{\infty} r^{n} = \frac{r}{1-r}, |r| < 1
+\frac{r}{1-r} = \sum_{n = 1}^{\infty} r^{n}, \qquad |r| < 1
 \end{equation}
 
-In the present case,
-
-\begin{equation} \label{eq:05}
-\frac{1}{\exp(x) - 1} = \frac{\exp(-x)}{1 - \exp(-x)}
-\end{equation}
-
-\noindent and $x > 0$ so $0 < \exp(-x) < 1$ so the series holds when $\exp(-x)$ is substituted for $r$.
+\noindent Note that $\exp(-x) < 1$ since $0 < x < \infty$; subsituting this exponentiation for $r$ into Eq. \ref{eq:04} yields
 
 \begin{align} \label{eq:06}
-\frac{\exp(-x)}{1 - \exp(-x)} &= \sum_{n = 1}^{\infty} \left( \exp(-x) \right)^{n} \\
+\frac{\exp(-x)}{1 - \exp(-x)} &= \sum_{n = 1}^{\infty} \exp(-x)^{n} \\
  &= \sum_{n = 1}^{\infty} \exp(-nx)
 \end{align}
 
 The sum from Eq. \ref{eq:06} can be substituted into the expression in Eq. \ref{eq:01} to yield
 
 \begin{align} \label{eq:07}
-Q(\nu_{g}, T) &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \int_{x_{g}}^{\infty} x^{2} \frac{1}{\exp(x) - 1} dx \\
- &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \int_{x_{g}}^{\infty} x^{2} \frac{\exp(-x)}{1 - \exp(-x)} dx \\
+Q(\nu_{g}, T) &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \int_{x_{g}}^{\infty} x^{2} \frac{\exp(-x)}{1 - \exp(-x)} dx \\
  &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \int_{x_{g}}^{\infty} x^{2} \sum_{n = 1}^{\infty} \exp(-nx) dx \\
  &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \int_{x_{g}}^{\infty} x^{2} \exp(-nx) dx
 \end{align}
@@ -125,7 +126,7 @@ Consider a general term in the series given in Eq. \ref{eq:07}
 \int_{x_{g}}^{\infty} x^{2} \exp(-nx) dx
 \end{equation}
 
-Note
+\noindent Note
 
 \begin{equation} \label{eq:09}
 \int_{0}^{\infty} x^{2} \exp(-nx) dx = \int_{x_{g}}^{\infty} x^{2} \exp(-nx) dx + \int_{0}^{x_{g}} x^{2} \exp(-nx) dx
@@ -154,35 +155,35 @@ y \equiv \frac{x}{x_{g}}
  &= x_{g}^{3} \int_{0}^{1} y^{2} \exp(-nx_{g}y) dy
 \end{align}
 
-Integral 650 of the CRC \cite{} is
+\noindent Integral 650 of the CRC \cite{} is
 
 \begin{equation} \label{eq:14}
 \int_{0}^{1} x^{m} \exp(-ax) dx = \frac{m!}{a^{m+1}} \left( 1 - \exp(-a) \sum_{r = 0}^{m} \frac{a^{r}}{r!} \right)
 \end{equation}
 
-So the integral with respect to $y$ from 0 to 1:
+\noindent So the integral in Eq. \ref{eq:13} is
 
 \begin{equation} \label{eq:15}
 x_{g}^{3} \int_{0}^{1} y^{2} \exp(-nx_{g}y) dy = \frac{2!}{n^{3}} \left( 1 - \exp(-nx_{g}) \sum_{r = 0}^{2} \frac{ (nx_{g})^{r} }{r!} \right)
 \end{equation}
 
-Thus,
+\noindent Expanding the sum yields,
 
 \begin{equation} \label{eq:16}
-\int_{0}^{x_{g}} x^{2} \exp(-nx) dx = \frac{2}{n^{3}} \left( 1 - \exp(-nx_{g}) \left(1 + nx_{g} + \frac{ (nx_{g})^{2} }{2} \right) \right)
+\int_{0}^{x_{g}} x^{2} \exp(-nx) dx = \frac{2}{n^{3}} \left( 1 - \exp(-nx_{g}) \left[1 + nx_{g} + \frac{ (nx_{g})^{2} }{2} \right] \right)
 \end{equation}
 
-Substitute the results of Eq. \ref{eq:11} and \ref{eq:16} into Eq. \ref{eq:10}
+Substituting the results of Eqs. \ref{eq:11} and \ref{eq:16} into Eq. \ref{eq:10} and multiplying through yields
 
-\begin{equation} \label{eq:17}
-\int_{x_{g}}^{\infty} x^{2} \exp(-nx) dx = \frac{2}{n^{3}} \exp(-nx_{g}) \left( 1 + nx_{g} + \frac{ (nx_{g})^{2} }{2} \right)
-\end{equation}
+\begin{align} \label{eq:17}
+\int_{x_{g}}^{\infty} x^{2} \exp(-nx) dx &= \frac{2}{n^{3}} \exp(-nx_{g}) \left( 1 + nx_{g} + \frac{ (nx_{g})^{2} }{2} \right) \\
+ &= \frac{2}{n^{3}} \exp(-nx_{g}) + \frac{2x_{g}}{n^{2}} \exp(-nx_{g}) + \frac{x_{g}^{2}}{n} \exp(-nx_{g})
+\end{align}
 
-\noindent which can be substituted back into Eq. \ref{eq:07}.
+\noindent which can be substituted back into Eq. \ref{eq:07} to yield
 
 \begin{align} \label{eq:18}
 Q(\nu_{g}, T) &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \int_{x_{g}}^{\infty} x^{2} \exp(-nx) dx \\
- &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \frac{2}{n^{3}} \exp(-nx_{g}) \left( 1 + nx_{g} + \frac{ (nx_{g})^{2} }{2} \right) \\
  &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \left( \frac{2}{n^{3}} \exp(-nx_{g}) + \frac{2x_{g}}{n^{2}} \exp(-nx_{g}) + \frac{2x_{g}^{2}}{n} \exp(-nx_{g}) \right) \\
  &= \frac{4\pi (kT)^{3}}{h^{3} c^{2}} \left(\sum_{n = 1}^{\infty} \frac{\exp(-x_{g})^{n}}{n^{3}} + x_{g} \sum_{n = 1}^{\infty} \frac{\exp(-x_{g})^{n}}{n^{2}} + x_{g}^{2} \sum_{n = 1}^{\infty} \frac{\exp(-x_{g})^{n}}{n} \right) \\
 \end{align}
@@ -190,19 +191,19 @@ Q(\nu_{g}, T) &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \int_{x
 The polylogarithm is defined as
 
 \begin{equation} \label{eq:22}
-Li_{s}(z) = \sum_{n = 1}^{\infty} \frac{z^{n}}{n^{s}}, |z| < 1
+\Li_{s}(z) = \sum_{n = 1}^{\infty} \frac{z^{n}}{n^{s}}, \qquad |z| < 1
 \end{equation}
 
-Recall again that $\exp(-x_{g}) < 1$ since $0 < x_{g} < \infty$. So
+\noindent Substituting $\exp(-nx_{g})$ as the argument for the polylogarithm yields
 
 \begin{equation} \label{eq:23}
-Li_{s} \left(\exp(-x_{g}) \right) = \sum_{n = 1}^{\infty} \frac{\exp(-x_{g})^{n}}{n^{s}}
+\Li_{s} \left(\exp(-x_{g}) \right) = \sum_{n = 1}^{\infty} \frac{\exp(-x_{g})^{n}}{n^{s}}
 \end{equation}
 
-Substitute Eq. \ref{eq:23} into Eq. \ref{eq:18}
+\noindent which can be used to express the summations in Eq. \ref{eq:18}
 
 \begin{equation} \label{eq:24}
-Q(\nu_{g}, T) = \frac{4\pi (kT)^{3}}{h^{3} c^{2}} \left(Li_{3}(\exp(-x_{g})) + x_{g} Li_{2}(\exp(-x_{g})) + x_{g}^{2} Li_{1}(\exp(-x_{g})) \right) 
+Q(\nu_{g}, T) = \frac{4\pi (kT)^{3}}{h^{3} c^{2}} \left(\Li_{3}(\exp(-x_{g})) + x_{g} \Li_{2}(\exp(-x_{g})) + x_{g}^{2} \Li_{1}(\exp(-x_{g})) \right) 
 \end{equation}
 
 
