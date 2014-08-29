@@ -81,7 +81,7 @@ The variable can be changed to simplify the integral as shown in Eq. \ref{eq:01}
 Q(\nu_{g}, T) = \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \int_{x_{g}}^{\infty} \frac{x^{2}}{\exp(x) - 1} dx
 \end{equation}
 
-\noindent where $x$ is defined as
+\noindent where $x_{g}$ is defined as
 
 \begin{equation} \label{eq:02}
 x_{g}kT = h \nu_{g} = q V_{g}
@@ -167,13 +167,13 @@ y \equiv \frac{x}{x_{g}}
 x_{g}^{3} \int_{0}^{1} y^{2} \exp(-nx_{g}y) dy = \frac{2!}{n^{3}} \left( 1 - \exp(-nx_{g}) \sum_{r = 0}^{2} \frac{ (nx_{g})^{r} }{r!} \right)
 \end{equation}
 
-\noindent Expanding the sum yields,
+\noindent Expressing the left-hand side of Eq. \ref{eq:13} in terms fo the expanded sum of Eq. \ref{eq:15} yields
 
 \begin{equation} \label{eq:16}
 \int_{0}^{x_{g}} x^{2} \exp(-nx) dx = \frac{2}{n^{3}} \left( 1 - \exp(-nx_{g}) \left[1 + nx_{g} + \frac{ (nx_{g})^{2} }{2} \right] \right)
 \end{equation}
 
-Substituting the results of Eqs. \ref{eq:11} and \ref{eq:16} into Eq. \ref{eq:10} and multiplying through yields
+Subtracting Eq. \ref{eq:16} from Eq. \ref{eq:11} as in Eq. \ref{eq:10} yields
 
 \begin{align} \label{eq:17}
 \int_{x_{g}}^{\infty} x^{2} \exp(-nx) dx &= \frac{2}{n^{3}} \exp(-nx_{g}) \left( 1 + nx_{g} + \frac{ (nx_{g})^{2} }{2} \right) \\
@@ -185,7 +185,7 @@ Substituting the results of Eqs. \ref{eq:11} and \ref{eq:16} into Eq. \ref{eq:10
 \begin{align} \label{eq:18}
 Q(\nu_{g}, T) &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \int_{x_{g}}^{\infty} x^{2} \exp(-nx) dx \\
  &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \left( \frac{2}{n^{3}} \exp(-nx_{g}) + \frac{2x_{g}}{n^{2}} \exp(-nx_{g}) + \frac{2x_{g}^{2}}{n} \exp(-nx_{g}) \right) \\
- &= \frac{4\pi (kT)^{3}}{h^{3} c^{2}} \left(\sum_{n = 1}^{\infty} \frac{\exp(-x_{g})^{n}}{n^{3}} + x_{g} \sum_{n = 1}^{\infty} \frac{\exp(-x_{g})^{n}}{n^{2}} + x_{g}^{2} \sum_{n = 1}^{\infty} \frac{\exp(-x_{g})^{n}}{n} \right) \\
+ &= \frac{4\pi (kT)^{3}}{h^{3} c^{2}} \left(\sum_{n = 1}^{\infty} \frac{\exp(-x_{g})^{n}}{n^{3}} + x_{g} \sum_{n = 1}^{\infty} \frac{\exp(-x_{g})^{n}}{n^{2}} + x_{g}^{2} \sum_{n = 1}^{\infty} \frac{\exp(-x_{g})^{n}}{n} \right)
 \end{align}
 
 The polylogarithm is defined as
@@ -206,6 +206,7 @@ The polylogarithm is defined as
 Q(\nu_{g}, T) = \frac{4\pi (kT)^{3}}{h^{3} c^{2}} \left(\Li_{3}(\exp(-x_{g})) + x_{g} \Li_{2}(\exp(-x_{g})) + x_{g}^{2} \Li_{1}(\exp(-x_{g})) \right) 
 \end{equation}
 
+\noindent Thus, Shockley and Quiesser's photon flux has been expressed in terms of polylogarithms of integer order and real argument.
 
 % \bibliographystyle{nar}
 % \bibliography{}
