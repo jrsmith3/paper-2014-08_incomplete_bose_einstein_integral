@@ -65,19 +65,18 @@ pdfcreator={pdfTeX}
 
 
 \section{Introduction}
-Computing photon energy and particle fluxes using the imcomplete Bose-Einstein integral is central to calculating the efficiency of efficiency limits of solar cells in the detailed balance limit \cite{10.1063/1.1736034}. This integral also appears in teh calculation of the photo-enhanced thermoelectron emission (PETE) from materials \cite{10.1038/nmat2814}. Herein a solution to the incomplete Bose-Einstein integral is derived in terms of the polylogarithm function for the case of integer values of the exponent. The polylogarithm has the attractive property of rapid convergence via direct summation for small values of the argument \cite{http://academic.reed.edu/physics/faculty/crandall/papers/Polylog}; a property that will be exploited in this case to rapidly and precisely calculate the numerical value of the incomplete Bose-Einstein integral.
+Computing photon energy and particle fluxes using the imcomplete Bose-Einstein integral is central to calculating the efficiency of efficiency limits of solar cells in the detailed balance limit \cite{10.1063/1.1736034}. This integral also appears in the calculation of the photo-enhanced thermoelectron emission (PETE) from materials \cite{10.1038/nmat2814}. Herein a solution to the incomplete Bose-Einstein integral is derived in terms of the polylogarithm function for the case of integer values of the exponent. The polylogarithm has the attractive property of rapid convergence via direct summation for small values of the argument \cite{http://academic.reed.edu/physics/faculty/crandall/papers/Polylog}; a property that will be exploited in this case to rapidly and precisely calculate the numerical value of the incomplete Bose-Einstein integral.
 
 
 \section{Calculation}
 Levy and Honsberg \cite{10.1016/j.sse.2006.06.017} give the incomplete Bose-Einstein integral as in Eq. \ref{eq:26}
 
 \begin{equation} \label{eq:26}
-F_{m}(E_{A},E_{B},T,\mu) = \frac{2 \pi}{h^{3}c^{2}} \int_{E_{A}}^{E_{B}} E^{m} \frac{1}{\exp \left( \frac{E - \mu}{kT} \right) - 1} dE, \qquad \mu < E_{A} < E_{B}, 0 < E_{A} < E_{B}
+F_{m}(E_{A},E_{B},T,\mu) = \frac{2 \pi}{h^{3}c^{2}} \int_{E_{A}}^{E_{B}} E^{m} \frac{1}{\exp \left( \frac{E - \mu}{kT} \right) - 1} dE 
 \end{equation}
 
-NOTE: the above equation is incomplete. Add a second case where the equation equals 0 otherwise.
 
-\noindent where $E_{A}$ and $E_{B}$ are the lower and upper limits of the photon emission, respectively, $\mu$ is the equilibrium chemical potential of the radiation, $T$ is the absolute temperature of the solid, $c$ is the speed of light, $h$ is Planck's constant, and $k$ is Boltzmann's constant. In the calculation of Levy and Honsberg, $m$ takes the value of 2 or 3 for photon number flux and photon energy flux, respectively. The expression in Eq. \ref{eq:26} is a more general form of Shockley and Quiesser's number flux.
+\noindent for $\mu < E_{A}$ and $0 < E_{A} < E_{B}$ and zero otherwise. The quantities $E_{A}$ and $E_{B}$ are the lower and upper limits of the photon emission, respectively, $\mu$ is the equilibrium chemical potential of the radiation, $T$ is the absolute temperature of the solid, $c$ is the speed of light, $h$ is Planck's constant, and $k$ is Boltzmann's constant. In the calculation of Levy and Honsberg, $m$ takes the value of 2 or 3 for photon number flux and photon energy flux, respectively. The expression in Eq. \ref{eq:26} is a more general form of Shockley and Quiesser's number flux.
 
 
 % Shockly and Quiesser \cite{10.1063/1.1736034} give an expression for $Q(\nu_{g}, T)$; the number of photons of frequency greater than $\nu_{g}$ leaving a material per unit area per unit time for blackbody radiation of temperature $T$. This expression is represented in Eq. \ref{eq:00}
@@ -117,7 +116,7 @@ F_{m}(E_{A},\infty,T,\mu) &= \frac{2 \pi}{h^{3}c^{2}} \int_{E_{A}}^{\infty} E^{m
 The exponential term can be factored from the denominator of the integrand of Eq. \ref{eq:27} to yield
 
 \begin{equation} \label{eq:30}
-F_{m}(E_{A},\infty,T,\mu) = \frac{2 \pi (kT)^{n+1}}{h^{3}c^{2}} \int_{x_{A}}^{\infty} x^{m} \frac{\exp(u-x)}{1 - \exp(u-x)} dx
+F_{m}(\ldots) = \frac{2 \pi (kT)^{n+1}}{h^{3}c^{2}} \int_{x_{A}}^{\infty} x^{m} \frac{\exp(u-x)}{1 - \exp(u-x)} dx
 \end{equation}
 
 
@@ -145,7 +144,7 @@ Note that $\exp(u-x) < 1$ since $u < x$ for all values of $x$ over the entire ra
 The sum from Eq. \ref{eq:06} can be substituted into the expression in Eq. \ref{eq:30} to yield
 
 \begin{align} \label{eq:07}
-F_{m}() &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \int_{x_{A}}^{\infty} x^{m} \frac{\exp(u-x)}{1 - \exp(u-x)} dx \nonumber \\
+F_{m}(\ldots) &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \int_{x_{A}}^{\infty} x^{m} \frac{\exp(u-x)}{1 - \exp(u-x)} dx \nonumber \\
  &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \int_{x_{A}}^{\infty} x^{m} \sum_{n = 1}^{\infty} \exp(nu) \exp(-nx) dx \nonumber \\
  &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \int_{x_{A}}^{\infty} x^{m} \exp(-nx) dx
 \end{align}
@@ -168,7 +167,7 @@ Consider a general term in the series given in Eq. \ref{eq:07}
 \int_{x_{A}}^{\infty} x^{m} \exp(-nx) dx = \int_{0}^{\infty} x^{m} \exp(-nx) dx - \int_{0}^{x_{A}} x^{m} \exp(-nx) dx
 \end{equation}
 
-\noindent The integral from 0 to $\infty$ can easily be evaluated -- \emph{cf}. integral 641 \cite{9790849324795}.
+\noindent The integral from 0 to $\infty$ can easily be evaluated -- \emph{cf}. integral 641 \cite{9780849324796}.
 
 \begin{equation} \label{eq:11}
 \int_{0}^{\infty} x^{m} \exp(-nx) dx = \frac{m!}{n^{m+1}}
@@ -185,7 +184,7 @@ y \equiv \frac{x}{x_{A}}
  &= x_{A}^{m+1} \int_{0}^{1} y^{m} \exp(-nx_{A}y) dy
 \end{align}
 
-\noindent Using integral 650 of \cite{9790849324795}, Eq. \ref{eq:13} becomes
+\noindent Using integral 650 of \cite{9780849324796}, Eq. \ref{eq:13} becomes
 
 \begin{equation} \label{eq:15}
 \int_{0}^{x_{A}} x^{m} \exp(-nx) dx = \frac{m!}{n^{m+1}} \left(1 - \exp(-n x_{A}) \sum_{j = 0}^{m} \frac{(n x_{A})^{j}}{j!} \right) 
@@ -200,7 +199,7 @@ Substituting Eqs. \ref{eq:11} and \ref{eq:15} into Eq. \ref{eq:10} yields
 which can be substituted into Eq. \ref{eq:07} to yield
 
 \begin{align} \label{eq:32}
-F_{m}() &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \int_{x_{A}}^{\infty} x^{m} \exp(-nx) dx \nonumber \\
+F_{m}(\ldots) &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \int_{x_{A}}^{\infty} x^{m} \exp(-nx) dx \nonumber \\
  &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \frac{m!}{n^{m+1}} \exp(-n x_{A}) \sum_{j = 0}^{m} \frac{(n x_{A})^{j}}{j!} \nonumber \\
  &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \sum_{j = 0}^{m} \frac{m!x_{A}^{j}}{j!} \frac{\exp(-n x_{A})}{n^{m-j+1}} \nonumber \\
  &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \sum_{s = 1}^{m+1} \frac{m!x_{A}^{m-s+1}}{(m-s+1)!} \frac{\exp(-n x_{A})}{n^{s}} \nonumber \\
@@ -209,9 +208,9 @@ F_{m}() &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \i
  &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{m!x_{A}^{m-s+1}}{(m-s+1)!} \Li_{s} \left( \exp(u-x_{A}) \right)
 \end{align}
 
-\noindent after re-indexing the sum over $j$ to one over $s$ where $s = m - j + 1$. Thus, the upper incomplete Bose-Einstein integral has been expressed in terms of a finite sum of polylogarithm functions of integer order and real argument.
+\noindent after re-indexing the sum over $j$ to one over $s$ where $s = m - j + 1$. It is appropriate to replace the sum with the polylogarithm function as given in Eq. \ref{eq:22} since, again, $u < x$ and therefore $\exp(u-x) < 1$. Thus, the upper incomplete Bose-Einstein integral has been expressed in terms of a finite sum of polylogarithm functions of integer order and real argument.
 
 
-% \bibliographystyle{nar}
-% \bibliography{}
+\bibliographystyle{nar}
+\bibliography{bib}
 \end{document}
