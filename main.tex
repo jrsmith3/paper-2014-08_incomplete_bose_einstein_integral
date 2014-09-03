@@ -39,7 +39,8 @@ pdfcreator={pdfTeX}
 % --
 % 00,01,02,03,04,05,06,07,08,09,
 % 10,11,12,13,14,15,16,17,18,19,
-% 20,21,22,23,24,25,
+% 20,21,22,23,24,25,26,27,28,29,
+% 30,
 % 
 % fig
 % ---
@@ -64,37 +65,64 @@ pdfcreator={pdfTeX}
 
 
 \section{Introduction}
-Computing photon energy and particle fluxes using the imcomplete Bose-Einstein integral is central to calculating the efficiency of efficiency limits of solar cells in the detailed balance limit \cite{10.1063/1.1736034}. This integral also appears in teh calculation of the photo-enhanced thermoelectron emission (PETE) from materials \cite{10.1038/nmat2814}. Herein a solution to the incomplete Bose-Einstein integral is derived in terms of the polylogarithm function for the case of integer values of the exponent. The polylogarithm has the attractive property of rapid convergence via direct summation for small values of the argument \cite{http%3A%2F%2Facademic.reed.edu%2Fphysics%2Ffaculty%2Fcrandall%2Fpapers%2FPolylog}; a property that will be exploited in this case to rapidly and precisely calculate the numerical value of the incomplete Bose-Einstein integral.
+Computing photon energy and particle fluxes using the imcomplete Bose-Einstein integral is central to calculating the efficiency of efficiency limits of solar cells in the detailed balance limit \cite{10.1063/1.1736034}. This integral also appears in teh calculation of the photo-enhanced thermoelectron emission (PETE) from materials \cite{10.1038/nmat2814}. Herein a solution to the incomplete Bose-Einstein integral is derived in terms of the polylogarithm function for the case of integer values of the exponent. The polylogarithm has the attractive property of rapid convergence via direct summation for small values of the argument \cite{http://academic.reed.edu/physics/faculty/crandall/papers/Polylog}; a property that will be exploited in this case to rapidly and precisely calculate the numerical value of the incomplete Bose-Einstein integral.
 
 
 \section{Calculation}
-Shockly and Quiesser \cite{10.1063/1.1736034} give an expression for $Q(\nu_{g}, T)$; the number of photons of frequency greater than $\nu_{g}$ leaving a material per unit area per unit time for blackbody radiation of temperature $T$. This expression is represented in Eq. \ref{eq:00}
+Levy and Honsberg \cite{10.1016/j.sse.2006.06.017} give the incomplete Bose-Einstein integral as in Eq. \ref{eq:26}
 
-\begin{equation} \label{eq:00}
-Q(\nu_{g}, T) = \frac{2\pi}{c^{2}} \int_{\nu_{g}}^{\infty} \frac{\nu^{2}}{\exp\left( \frac{h \nu}{kT} \right) - 1} d\nu
+\begin{equation} \label{eq:26}
+F_{n}(E_{A},E_{B},T,\mu) = \frac{2 \pi}{h^{3}c^{2}} \int_{E_{A}}^{E_{B}} E^{n} \frac{1}{\exp \left( \frac{E - \mu}{kT} \right) - 1} dE, \qquad \mu < E_{A} < E_{B}, 0 < E_{A} < E_{B}
 \end{equation}
 
-\noindent where $c$ is the speed of light in vacuum, $h$ is Planck's constant, $k$ is Boltzmann's constant, and $\nu$ is the frequency of a photon.
+NOTE: the above equation is incomplete. Add a second case where the equation equals 0 otherwise.
 
-The variable can be changed to simplify the integral as shown in Eq. \ref{eq:01}
+\noindent where $E_{A}$ and $E_{B}$ are the lower and upper limits of the photon emission, respectively, $\mu$ is the equilibrium chemical potential of the radiation, $T$ is the absolute temperature of the solid, $c$ is the speed of light, $h$ is Planck's constant, and $k$ is Boltzmann's constant. In the calculation of Levy and Honsberg, $n$ takes the value of 2 or 3 for photon number flux and photon energy flux, respectively. The expression in Eq. \ref{eq:26} is a more general form of Shockley and Quiesser's number flux.
 
-\begin{equation} \label{eq:01}
-Q(\nu_{g}, T) = \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \int_{x_{g}}^{\infty} \frac{x^{2}}{\exp(x) - 1} dx
+
+% Shockly and Quiesser \cite{10.1063/1.1736034} give an expression for $Q(\nu_{g}, T)$; the number of photons of frequency greater than $\nu_{g}$ leaving a material per unit area per unit time for blackbody radiation of temperature $T$. This expression is represented in Eq. \ref{eq:00}
+
+% \begin{equation} \label{eq:00}
+% Q(\nu_{g}, T) = \frac{2\pi}{c^{2}} \int_{\nu_{g}}^{\infty} \frac{\nu^{2}}{\exp\left( \frac{h \nu}{kT} \right) - 1} d\nu
+% \end{equation}
+
+% \noindent where $c$ is the speed of light in vacuum, $h$ is Planck's constant, $k$ is Boltzmann's constant, and $\nu$ is the frequency of a photon.
+
+In the following, the integral given in Eq. \ref{eq:26} will be expressed in terms of the polylogarithm function for an arbitrary integer value of $n$. The upper incomplete Bose-Einstein integral will first be calculated -- that is, with limits from $E_{A}$ to $\infty$. The resulting expression will be used to calculate the incomplete Bose-Einstein integral given in Eq. \ref{eq:26} from $E_{A}$ to $E_{B}$.
+
+The polylogarithm of integer order $s$ within the unit circle is defined as
+
+\begin{equation} \label{eq:22}
+\Li_{s}(z) = \sum_{n = 1}^{\infty} \frac{z^{n}}{n^{s}}, \qquad |z| < 1
 \end{equation}
 
-\noindent where $x_{g}$ is defined as
+Consider the incomplete Bose-Einstein integral given in Eq. \ref{eq:27} with the variables changed such that
 
-\begin{equation} \label{eq:02}
-x_{g}kT = h \nu_{g} = q V_{g}
+\begin{equation} \label{eq:28}
+x \equiv \frac{E}{kT}
 \end{equation}
 
-\noindent and $q$ is the magnitude of the electron charge and $V_{g}$ is the bandgap of the semiconductor. The exponential term can be factored from the denominator of the integrand to yield Eq. \ref{eq:25}
+\noindent and
 
-\begin{equation} \label{eq:25}
-Q(\nu_{g}, T) = \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \int_{x_{g}}^{\infty} x^{2} \frac{\exp(-x)}{1 - \exp(-x)} dx
+\begin{equation} \label{eq:29}
+u \equiv \frac{\mu}{kT}
 \end{equation}
 
-The geometric series can be rearranged in order to replace the fractional term of the integrand of Eq. \ref{eq:25} with a sum. The geometric series is given in Eq. \ref{eq:03}
+\noindent so
+
+\begin{align} \label{eq:27}
+F_{n}(E_{A},\infty,T,\mu) &= \frac{2 \pi}{h^{3}c^{2}} \int_{E_{A}}^{\infty} E^{n} \frac{1}{\exp \left( \frac{E - \mu}{kT} \right) - 1} dE \nonumber \\
+ &= \frac{2 \pi (kT)^{n+1}}{h^{3}c^{2}} \int_{x_{A}}^{\infty} x^{n} \frac{1}{\exp(x-u) - 1} dx
+\end{align}
+
+The exponential term can be factored from the denominator of the integrand of Eq. \ref{eq:27} to yield
+
+\begin{equation} \label{eq:30}
+F_{n}(E_{A},\infty,T,\mu) = \frac{2 \pi (kT)^{n+1}}{h^{3}c^{2}} \int_{x_{A}}^{\infty} x^{n} \frac{\exp(u-x)}{1 - \exp(u-x)} dx
+\end{equation}
+
+
+The geometric series can be rearranged in order to replace the fractional term of the integrand of Eq. \ref{eq:30} with a sum. The geometric series is given in Eq. \ref{eq:03}
 
 \begin{equation} \label{eq:03}
 \frac{1}{1-r} = \sum_{n = 0}^{\infty} r^{n}, \qquad |r| < 1
@@ -106,13 +134,19 @@ The geometric series can be rearranged in order to replace the fractional term o
 \frac{r}{1-r} = \sum_{n = 1}^{\infty} r^{n}, \qquad |r| < 1
 \end{equation}
 
-\noindent Note that $\exp(-x) < 1$ since $0 < x < \infty$; subsituting this exponentiation for $r$ into Eq. \ref{eq:04} yields
+
+Note that $\exp(u-x) < 1$ since $u < x$ for all values of $x$ over the entire range of integration as specified in Eq. \ref{eq:26}; substituting this exponentiation for $r$ into Eq. \ref{eq:04} yields
 
 \begin{align} \label{eq:06}
-\frac{\exp(-x)}{1 - \exp(-x)} &= \sum_{n = 1}^{\infty} \exp(-x)^{n} \nonumber \\
- &= \sum_{n = 1}^{\infty} \exp(-nx)
+\frac{\exp(u-x)}{1 - \exp(u-x)} &= \sum_{n = 1}^{\infty} \exp(u-x)^{n} \nonumber \\
+ &= \sum_{n = 1}^{\infty} \exp(nu-nx)
 \end{align}
 
+
+
+
+
+% =================================
 The sum from Eq. \ref{eq:06} can be substituted into the expression in Eq. \ref{eq:01} to yield
 
 \begin{align} \label{eq:07}
@@ -190,10 +224,6 @@ Q(\nu_{g}, T) &= \frac{2\pi (kT)^{3}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \int_{x
 \end{align}
 
 The polylogarithm is defined as
-
-\begin{equation} \label{eq:22}
-\Li_{s}(z) = \sum_{n = 1}^{\infty} \frac{z^{n}}{n^{s}}, \qquad |z| < 1
-\end{equation}
 
 \noindent Substituting $\exp(-nx_{g})$ as the argument for the polylogarithm yields
 
