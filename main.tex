@@ -40,7 +40,7 @@ pdfcreator={pdfTeX}
 % 00,01,02,03,04,05,06,07,08,09,
 % 10,11,12,13,14,15,16,17,18,19,
 % 20,21,22,23,24,25,26,27,28,29,
-% 30,31,32,
+% 30,31,32,33,
 % 
 % fig
 % ---
@@ -110,13 +110,13 @@ u \equiv \frac{\mu}{kT}
 
 \begin{align} \label{eq:27}
 F_{m}(E_{A},\infty,T,\mu) &= \frac{2 \pi}{h^{3}c^{2}} \int_{E_{A}}^{\infty} E^{m} \frac{1}{\exp \left( \frac{E - \mu}{kT} \right) - 1} dE \nonumber \\
- &= \frac{2 \pi (kT)^{n+1}}{h^{3}c^{2}} \int_{x_{A}}^{\infty} x^{m} \frac{1}{\exp(x-u) - 1} dx
+ &= \frac{2 \pi (kT)^{m+1}}{h^{3}c^{2}} \int_{x_{A}}^{\infty} x^{m} \frac{1}{\exp(x-u) - 1} dx
 \end{align}
 
 The exponential term can be factored from the denominator of the integrand of Eq. \ref{eq:27} to yield
 
 \begin{equation} \label{eq:30}
-F_{m}(\ldots) = \frac{2 \pi (kT)^{n+1}}{h^{3}c^{2}} \int_{x_{A}}^{\infty} x^{m} \frac{\exp(u-x)}{1 - \exp(u-x)} dx
+F_{m}(\ldots) = \frac{2 \pi (kT)^{m+1}}{h^{3}c^{2}} \int_{x_{A}}^{\infty} x^{m} \frac{\exp(u-x)}{1 - \exp(u-x)} dx
 \end{equation}
 
 
@@ -144,9 +144,9 @@ Note that $\exp(u-x) < 1$ since $u < x$ for all values of $x$ over the entire ra
 The sum from Eq. \ref{eq:06} can be substituted into the expression in Eq. \ref{eq:30} to yield
 
 \begin{align} \label{eq:07}
-F_{m}(\ldots) &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \int_{x_{A}}^{\infty} x^{m} \frac{\exp(u-x)}{1 - \exp(u-x)} dx \nonumber \\
- &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \int_{x_{A}}^{\infty} x^{m} \sum_{n = 1}^{\infty} \exp(nu) \exp(-nx) dx \nonumber \\
- &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \int_{x_{A}}^{\infty} x^{m} \exp(-nx) dx
+F_{m}(\ldots) &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \int_{x_{A}}^{\infty} x^{m} \frac{\exp(u-x)}{1 - \exp(u-x)} dx \nonumber \\
+ &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \int_{x_{A}}^{\infty} x^{m} \sum_{n = 1}^{\infty} \exp(nu) \exp(-nx) dx \nonumber \\
+ &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \int_{x_{A}}^{\infty} x^{m} \exp(-nx) dx
 \end{align}
 
 Consider a general term in the series given in Eq. \ref{eq:07}
@@ -199,13 +199,13 @@ Substituting Eqs. \ref{eq:11} and \ref{eq:15} into Eq. \ref{eq:10} yields
 which can be substituted into Eq. \ref{eq:07} to yield
 
 \begin{align} \label{eq:32}
-F_{m}(\ldots) &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \int_{x_{A}}^{\infty} x^{m} \exp(-nx) dx \nonumber \\
- &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \frac{m!}{n^{m+1}} \exp(-n x_{A}) \sum_{j = 0}^{m} \frac{(n x_{A})^{j}}{j!} \nonumber \\
- &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \sum_{j = 0}^{m} \frac{m!x_{A}^{j}}{j!} \frac{\exp(-n x_{A})}{n^{m-j+1}} \nonumber \\
- &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \sum_{s = 1}^{m+1} \frac{m!x_{A}^{m-s+1}}{(m-s+1)!} \frac{\exp(-n x_{A})}{n^{s}} \nonumber \\
- &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{m!x_{A}^{m-s+1}}{(m-s+1)!} \sum_{n = 1}^{\infty} \frac{\exp(nu-n x_{A})}{n^{s}} \nonumber \\
- &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{m!x_{A}^{m-s+1}}{(m-s+1)!} \sum_{n = 1}^{\infty} \frac{\exp(u-x_{A})^{n}}{n^{s}} \nonumber \\
- &= \frac{2\pi (kT)^{n+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{m!x_{A}^{m-s+1}}{(m-s+1)!} \Li_{s} \left( \exp(u-x_{A}) \right)
+F_{m}(\ldots) &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \int_{x_{A}}^{\infty} x^{m} \exp(-nx) dx \nonumber \\
+ &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \frac{m!}{n^{m+1}} \exp(-n x_{A}) \sum_{j = 0}^{m} \frac{(n x_{A})^{j}}{j!} \nonumber \\
+ &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \sum_{j = 0}^{m} \frac{m!x_{A}^{j}}{j!} \frac{\exp(-n x_{A})}{n^{m-j+1}} \nonumber \\
+ &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \sum_{s = 1}^{m+1} \frac{m!x_{A}^{m-s+1}}{(m-s+1)!} \frac{\exp(-n x_{A})}{n^{s}} \nonumber \\
+ &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{m!x_{A}^{m-s+1}}{(m-s+1)!} \sum_{n = 1}^{\infty} \frac{\exp(nu-n x_{A})}{n^{s}} \nonumber \\
+ &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{m!x_{A}^{m-s+1}}{(m-s+1)!} \sum_{n = 1}^{\infty} \frac{\exp(u-x_{A})^{n}}{n^{s}} \nonumber \\
+ &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{m!x_{A}^{m-s+1}}{(m-s+1)!} \Li_{s} \left( \exp(u-x_{A}) \right)
 \end{align}
 
 \noindent after re-indexing the sum over $j$ to one over $s$ where $s = m - j + 1$. It is appropriate to replace the sum with the polylogarithm function as given in Eq. \ref{eq:22} since, again, $u < x$ and therefore $\exp(u-x) < 1$. Thus, the upper incomplete Bose-Einstein integral has been expressed in terms of a finite sum of polylogarithm functions of integer order and real argument.
