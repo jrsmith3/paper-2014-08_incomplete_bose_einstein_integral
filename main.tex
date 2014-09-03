@@ -88,15 +88,14 @@ NOTE: the above equation is incomplete. Add a second case where the equation equ
 
 % \noindent where $c$ is the speed of light in vacuum, $h$ is Planck's constant, $k$ is Boltzmann's constant, and $\nu$ is the frequency of a photon.
 
-In the following, the integral given in Eq. \ref{eq:26} will be expressed in terms of the polylogarithm function for an arbitrary integer value of $m$. The upper incomplete Bose-Einstein integral will first be calculated -- that is, with limits from $E_{A}$ to $\infty$. The resulting expression will be used to calculate the incomplete Bose-Einstein integral given in Eq. \ref{eq:26} from $E_{A}$ to $E_{B}$.
-
-The polylogarithm of integer order $s$ within the unit circle is defined as
+In the following, the integral given in Eq. \ref{eq:26} will be expressed in terms of the polylogarithm function of integer order and real argument, given in Eq. \ref{eq:22}, for an arbitrary integer value of $m$. The upper incomplete Bose-Einstein integral will first be calculated -- that is, with limits from $E_{A}$ to $\infty$. The resulting expression will be used to calculate the incomplete Bose-Einstein integral given in Eq. \ref{eq:26} from $E_{A}$ to $E_{B}$.
 
 \begin{equation} \label{eq:22}
 \Li_{s}(z) = \sum_{n = 1}^{\infty} \frac{z^{n}}{n^{s}}, \qquad |z| < 1
 \end{equation}
 
-Consider the incomplete Bose-Einstein integral given in Eq. \ref{eq:27} with the variables changed such that
+\subsection{Upper-incomplete Bose-Einstein integral}
+Consider the upper incomplete Bose-Einstein integral given in Eq. \ref{eq:27} with the variables changed such that
 
 \begin{equation} \label{eq:28}
 x \equiv \frac{E}{kT}
@@ -169,7 +168,7 @@ Consider a general term in the series given in Eq. \ref{eq:07}
 \int_{x_{A}}^{\infty} x^{m} \exp(-nx) dx = \int_{0}^{\infty} x^{m} \exp(-nx) dx - \int_{0}^{x_{A}} x^{m} \exp(-nx) dx
 \end{equation}
 
-The integral from 0 to $\infty$ can easily be evaluated -- cf. integral 641 \cite{9790849324795}.
+\noindent The integral from 0 to $\infty$ can easily be evaluated -- \emph{cf}. integral 641 \cite{9790849324795}.
 
 \begin{equation} \label{eq:11}
 \int_{0}^{\infty} x^{m} \exp(-nx) dx = \frac{m!}{n^{m+1}}
