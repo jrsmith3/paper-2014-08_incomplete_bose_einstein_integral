@@ -210,6 +210,14 @@ F_{m}(\ldots) &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(
 
 \noindent after re-indexing the sum over $j$ to one over $s$ where $s = m - j + 1$. It is appropriate to replace the sum with the polylogarithm function as given in Eq. \ref{eq:22} since, again, $u < x$ and therefore $\exp(u-x) < 1$. Thus, the upper incomplete Bose-Einstein integral has been expressed in terms of a finite sum of polylogarithm functions of integer order and real argument.
 
+\subsection{Incomplete Bose-Einstein integral}
+The incomplete Bose-Einstein integral given in Eq. \ref{eq:26} can be expressed as a difference of two upper-incomplete Bose-Einstein integrals evaluated at different limits.
+
+\begin{align} \label{eq:33}
+F_{m}(E_{A}, E_{B}, T, \mu) &= F_{m}(E_{A}, \infty, T, \mu) - F_{m}(E_{B}, \infty, T, \mu) \nonumber \\
+ &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{m!}{(m-s+1)!} \left( x_{A}^{m-s+1} \Li_{s} \left( \exp(u-x_{A}) \right) - x_{B}^{m-s+1} \Li_{s} \left( \exp(u-x_{B}) \right)
+\right)
+\end{align} 
 
 \bibliographystyle{nar}
 \bibliography{bib}
