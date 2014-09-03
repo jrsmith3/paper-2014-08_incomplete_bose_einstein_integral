@@ -201,11 +201,11 @@ which can be substituted into Eq. \ref{eq:07} to yield
 \begin{align} \label{eq:32}
 F_{m}(\ldots) &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \int_{x_{A}}^{\infty} x^{m} \exp(-nx) dx \nonumber \\
  &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \frac{m!}{n^{m+1}} \exp(-n x_{A}) \sum_{j = 0}^{m} \frac{(n x_{A})^{j}}{j!} \nonumber \\
- &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \sum_{j = 0}^{m} \frac{m!x_{A}^{j}}{j!} \frac{\exp(-n x_{A})}{n^{m-j+1}} \nonumber \\
- &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \sum_{s = 1}^{m+1} \frac{m!x_{A}^{m-s+1}}{(m-s+1)!} \frac{\exp(-n x_{A})}{n^{s}} \nonumber \\
- &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{m!x_{A}^{m-s+1}}{(m-s+1)!} \sum_{n = 1}^{\infty} \frac{\exp(nu-n x_{A})}{n^{s}} \nonumber \\
- &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{m!x_{A}^{m-s+1}}{(m-s+1)!} \sum_{n = 1}^{\infty} \frac{\exp(u-x_{A})^{n}}{n^{s}} \nonumber \\
- &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{m!x_{A}^{m-s+1}}{(m-s+1)!} \Li_{s} \left( \exp(u-x_{A}) \right)
+ &= \frac{2\pi m! (kT)^{m+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \sum_{j = 0}^{m} \frac{x_{A}^{j}}{j!} \frac{\exp(-n x_{A})}{n^{m-j+1}} \nonumber \\
+ &= \frac{2\pi m! (kT)^{m+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(nu) \sum_{s = 1}^{m+1} \frac{x_{A}^{m-s+1}}{(m-s+1)!} \frac{\exp(-n x_{A})}{n^{s}} \nonumber \\
+ &= \frac{2\pi m! (kT)^{m+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{x_{A}^{m-s+1}}{(m-s+1)!} \sum_{n = 1}^{\infty} \frac{\exp(nu-n x_{A})}{n^{s}} \nonumber \\
+ &= \frac{2\pi m! (kT)^{m+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{x_{A}^{m-s+1}}{(m-s+1)!} \sum_{n = 1}^{\infty} \frac{\exp(u-x_{A})^{n}}{n^{s}} \nonumber \\
+ &= \frac{2\pi m! (kT)^{m+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{x_{A}^{m-s+1}}{(m-s+1)!} \Li_{s} \left( \exp(u-x_{A}) \right)
 \end{align}
 
 \noindent after re-indexing the sum over $j$ to one over $s$ where $s = m - j + 1$. It is appropriate to replace the sum with the polylogarithm function as given in Eq. \ref{eq:22} since, again, $u < x$ and therefore $\exp(u-x) < 1$. Thus, the upper incomplete Bose-Einstein integral has been expressed in terms of a finite sum of polylogarithm functions of integer order and real argument.
@@ -215,7 +215,7 @@ The incomplete Bose-Einstein integral given in Eq. \ref{eq:26} can be expressed 
 
 \begin{align} \label{eq:33}
 F_{m}&(E_{A}, E_{B}, T, \mu) = F_{m}(E_{A}, \infty, T, \mu) - F_{m}(E_{B}, \infty, T, \mu) \nonumber \\
- &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{m!}{(m-s+1)!} \left( x_{A}^{m-s+1} \Li_{s} \left( \exp(u-x_{A}) \right) - x_{B}^{m-s+1} \Li_{s} \left( \exp(u-x_{B}) \right)
+ &= \frac{2\pi m! (kT)^{m+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{1}{(m-s+1)!} \left( x_{A}^{m-s+1} \Li_{s} \left( \exp(u-x_{A}) \right) - x_{B}^{m-s+1} \Li_{s} \left( \exp(u-x_{B}) \right)
 \right)
 \end{align} 
 
