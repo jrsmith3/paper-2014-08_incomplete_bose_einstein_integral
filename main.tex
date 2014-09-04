@@ -60,7 +60,7 @@ pdfcreator={pdfTeX}
 
 
 \begin{abstract}
-
+The canonical incomplete Bose-Einstein integral is expressed in terms of a finite sum of polylogarithm functions.
 \end{abstract}
 
 
@@ -76,7 +76,7 @@ F_{m}(E_{A},E_{B},T,\mu) = \frac{2 \pi}{h^{3}c^{2}} \int_{E_{A}}^{E_{B}} E^{m} \
 \end{equation}
 
 
-\noindent for $\mu < E_{A}$ and $0 < E_{A} < E_{B}$ and zero otherwise. The quantities $E_{A}$ and $E_{B}$ are the lower and upper limits of the photon emission, respectively, $\mu$ is the equilibrium chemical potential of the radiation, $T$ is the absolute temperature of the solid, $c$ is the speed of light, $h$ is Planck's constant, and $k$ is Boltzmann's constant. In the calculation of Levy and Honsberg, $m$ takes the value of 2 or 3 for photon number flux and photon energy flux, respectively. The expression in Eq. \ref{eq:26} is a more general form of Shockley and Quiesser's number flux.
+\noindent for conditions $\mu < E_{A}$ and $0 < E_{A} < E_{B}$; the value of $F_{m}$ is zero when the previous conditions are not met. The quantities $E_{A}$ and $E_{B}$ are the lower and upper limits of the photon emission, respectively, $\mu$ is the equilibrium chemical potential of the radiation, $T$ is the absolute temperature of the solid, $c$ is the speed of light, $h$ is Planck's constant, and $k$ is Boltzmann's constant. The quantity $m$ takes the value of 2 or 3 for photon number flux and photon energy flux, respectively.
 
 
 % Shockly and Quiesser \cite{10.1063/1.1736034} give an expression for $Q(\nu_{g}, T)$; the number of photons of frequency greater than $\nu_{g}$ leaving a material per unit area per unit time for blackbody radiation of temperature $T$. This expression is represented in Eq. \ref{eq:00}
@@ -87,7 +87,7 @@ F_{m}(E_{A},E_{B},T,\mu) = \frac{2 \pi}{h^{3}c^{2}} \int_{E_{A}}^{E_{B}} E^{m} \
 
 % \noindent where $c$ is the speed of light in vacuum, $h$ is Planck's constant, $k$ is Boltzmann's constant, and $\nu$ is the frequency of a photon.
 
-In the following, the integral given in Eq. \ref{eq:26} will be expressed in terms of the polylogarithm function of integer order and real argument, given in Eq. \ref{eq:22}, for an arbitrary integer value of $m$. The upper incomplete Bose-Einstein integral will first be calculated -- that is, with limits from $E_{A}$ to $\infty$. The resulting expression will be used to calculate the incomplete Bose-Einstein integral given in Eq. \ref{eq:26} from $E_{A}$ to $E_{B}$.
+In the following derivation, the incomplete Bose-Einstein integral given in Eq. \ref{eq:26} will be expressed in terms of the polylogarithm function of integer order and real argument. The polylogarithm is defined in Eq. \ref{eq:22}. First, the upper incomplete Bose-Einstein integral will be calculated -- that is, with limits from $E_{A}$ to $\infty$. The resulting expression will be used to calculate the incomplete Bose-Einstein integral given in Eq. \ref{eq:26} from $E_{A}$ to $E_{B}$.
 
 \begin{equation} \label{eq:22}
 \Li_{s}(z) = \sum_{n = 1}^{\infty} \frac{z^{n}}{n^{s}}, \qquad |z| < 1
@@ -133,7 +133,7 @@ The geometric series can be rearranged in order to replace the fractional term o
 \end{equation}
 
 
-Note that $\exp(u-x) < 1$ since $u < x$ for all values of $x$ over the entire range of integration as specified in Eq. \ref{eq:26}; substituting this exponentiation for $r$ into Eq. \ref{eq:04} yields
+Note that $\exp(u-x) < 1$ since $u < x$ for all values of $x$ over the entire range of integration as specified in Eq. \ref{eq:27}; substituting this exponentiation for $r$ into Eq. \ref{eq:04} yields
 
 \begin{align} \label{eq:06}
 \frac{\exp(u-x)}{1 - \exp(u-x)} &= \sum_{n = 1}^{\infty} \exp(u-x)^{n} \nonumber \\
