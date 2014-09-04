@@ -113,6 +113,8 @@ F_{m}(E_{A},\infty,T,\mu) &= \frac{2 \pi}{h^{3}c^{2}} \int_{E_{A}}^{\infty} E^{m
  &= \frac{2 \pi (kT)^{m+1}}{h^{3}c^{2}} \int_{x_{A}}^{\infty} x^{m} \frac{1}{\exp(x-u) - 1} dx
 \end{align}
 
+\noindent where $x_{A} = E_{A}/kT$.
+
 The exponential term can be factored from the denominator of the integrand of Eq. \ref{eq:27} to yield
 
 \begin{equation} \label{eq:30}
@@ -217,7 +219,9 @@ The incomplete Bose-Einstein integral given in Eq. \ref{eq:26} can be expressed 
 F_{m}&(E_{A}, E_{B}, T, \mu) = F_{m}(E_{A}, \infty, T, \mu) - F_{m}(E_{B}, \infty, T, \mu) \nonumber \\
  &= \frac{2\pi m! (kT)^{m+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{1}{(m-s+1)!} \left( x_{A}^{m-s+1} \Li_{s} \left( \exp(u-x_{A}) \right) - x_{B}^{m-s+1} \Li_{s} \left( \exp(u-x_{B}) \right)
 \right)
-\end{align} 
+\end{align}
+
+\noindent where $x_{B} = E_{B}/kT$.
 
 \section{Acknowledgement}
 Research was sponsored by the Army Research Laboratory and was accomplished under Cooperative Agreement Number W911NF-12-2-0019. The views and conclusions contained in this document are those of the authors and should not be interpreted as representing the official policies, either expressed or implied, of the Army Research Laboratory or the U.S. Government. The U.S. Government is authorized to reproduce and distribute reprints for Government purposes notwithstanding any copyright notation herein.
