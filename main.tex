@@ -41,7 +41,7 @@ pdfcreator={pdfTeX}
 % 10,11,12,13,14,15,16,17,18,19,
 % 20,21,22,23,24,25,26,27,28,29,
 % 30,31,32,33,34,35,36,37,38,39,
-% 40,41,
+% 40,41,42,43,44,45,
 % 
 % fig
 % ---
@@ -294,6 +294,45 @@ $l+3$ & $\frac{z^{l+3}}{(l+3)^{s}}$ & $\frac{z^{l+3}}{(l+1)^{s}}$ \\
 \begin{equation} \label{eq:41}
 \Li_{s,l}^{high}(z) < \frac{G_{l}^{high}(z)}{(l+1)^{s}}
 \end{equation}
+
+In addition, the partial sum of the lower terms of the polylogarithm series can be bounded below by the corresponding terms of a partial (hyper?)geometric series. Consider the partial sum of the polylogarithm series
+
+\begin{align} \label{eq:42}
+\Li_{s,l}^{lo}(z) &= \sum_{n = 1}^{l} \frac{z^{n}}{n^{s}} \\
+ &= z + \frac{z^{2}}{2^{s}} + \frac{z^{3}}{3^{s}} + ... + \frac{z^{l}}{l^{s}}
+\end{align}
+
+\noindent Consider also the corresponding terms of the geometric series
+
+\begin{align} \label{eq:43}
+G_{l}^{lo}(z) &= \sum_{n = 1}^{l} z^{n} \\
+ &= z^{1} + z^{2} + z^{3} + ... + z^{l}
+\end{align}
+
+Divide the partial sum of the lower tems of the geometric series by $l^{s}$
+
+\begin{equation} \label{eq:44}
+\frac{G_{l}^{lo}(z)}{l^{s}} = \frac{z^{1}}{l^{s}} + \frac{z^{2}}{l^{s}} + \frac{z^{3}}{l^{s}} + ... + \frac{z^{l}}{l^{s}}
+\end{equation}
+
+Compare the terms from the two partial sums and note that each term from the polylogarithm series is greater than or equal to the corresponding term of the geometric series.
+
+\begin{tabular}{ccc}
+$n$ & $\Li_{s,l}^{lo}(z)$ & $\frac{G_{l}^{lo}(z)}{l^{s}}$ \\
+\hline
+$1$ & $z$ & $\frac{z}{l^{s}}$ \\
+$2$ & $\frac{z^{2}}{2^{s}}$ & $\frac{z^{2}}{l^{s}}$ \\
+$3$ & $\frac{z^{3}}{3^{s}}$ & $\frac{z^{3}}{l^{s}}$ \\
+... & ... & ... \\
+$l$ & $\frac{z^{l}}{l^{s}}$ & $\frac{z^{l}}{l^{s}}$ \\
+\end{tabular}
+
+\noindent Thus
+
+\begin{equation} \label{eq:45}
+\Li_{s,l}^{lo}(z) > \frac{G_{l}^{lo}(z)}{l^{s}}
+\end{equation}
+
 
 
 \section{Acknowledgement}
