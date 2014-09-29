@@ -41,7 +41,7 @@ pdfcreator={pdfTeX}
 % 10,11,12,13,14,15,16,17,18,19,
 % 20,21,22,23,24,25,26,27,28,29,
 % 30,31,32,33,34,35,36,37,38,39,
-% 40,
+% 40,41,
 % 
 % fig
 % ---
@@ -274,9 +274,26 @@ G_{l}^{high}(z) &= \sum_{n = l + 1}^{\infty} z^{n} \\
 \noindent This upper bound can be further lowered by dividing through by $(l + 1)^{s}$
 
 \begin{align} \label{eq:40}
-\frac{G_{l}^{high}(z)}{(l+1)^{s} } = 
+\frac{G_{l}^{high}(z)}{(l+1)^{s}} = 
 \frac{z^{l+1}}{(l+1)^{s}} + \frac{z^{l+2}}{(l+1)^{s}} + \frac{z^{l+3}}{(l+1)^{s}} + ...
 \end{align}
+
+It is clear from the following table that the terms from the remainder of the polylogarithm sum are less than the corresponding terms from the reduced geometric series 
+
+\begin{tabular}{ccc}
+$n$ & $\Li_{s,l}^{high}(z)$ & $\frac{G_{l}^{high}(z)}{(l+1)^{s}}$ \\
+\hline
+$l+1$ & $\frac{z^{l+1}}{(l+1)^{s}}$ & $\frac{z^{l+1}}{(l+1)^{s}}$ \\
+$l+2$ & $\frac{z^{l+2}}{(l+2)^{s}}$ & $\frac{z^{l+2}}{(l+1)^{s}}$ \\
+$l+3$ & $\frac{z^{l+3}}{(l+3)^{s}}$ & $\frac{z^{l+3}}{(l+1)^{s}}$ \\
+... & ... & ... \\
+\end{tabular}
+
+\noindent Therefore,
+
+\begin{equation} \label{eq:41}
+\Li_{s,l}^{high}(z) < \frac{G_{l}^{high}(z)}{(l+1)^{s}}
+\end{equation}
 
 
 \section{Acknowledgement}
