@@ -41,7 +41,7 @@ pdfcreator={pdfTeX}
 % 10,11,12,13,14,15,16,17,18,19,
 % 20,21,22,23,24,25,26,27,28,29,
 % 30,31,32,33,34,35,36,37,38,39,
-% 40,41,42,43,44,45,
+% 40,41,42,43,44,45,46,47,48,
 % 
 % fig
 % ---
@@ -331,6 +331,24 @@ $l$ & $\frac{z^{l}}{l^{s}}$ & $\frac{z^{l}}{l^{s}}$ \\
 
 \begin{equation} \label{eq:45}
 \Li_{s,l}^{lo}(z) > \frac{G_{l}^{lo}(z)}{l^{s}}
+\end{equation}
+
+Noting the inequalities of Eqs. \ref{eq:41} and \ref{eq:45}, the uncertainity ratio $U$ is bounded by
+
+\begin{equation} \label{eq:46}
+U > \frac{G_{l}^{lo}(z)}{G_{hi}^{lo}(z)} \frac{(l+1)^{s}}{l^{s}}
+\end{equation}
+
+\noindent which is to say that the uncertainty ratio of the polylogarithm will be better (higher) than the uncertainty ratio of the partial sum of a geometric series to its remainder. The numerator and denominator of Eq. \ref{eq:46} can be replaced and the expression simplified to
+
+\begin{equation} \label{eq:47}
+U > U_{G} = z^{-l} - 1
+\end{equation}
+
+\noindent where $U_{G}$ is the uncertainty ratio of the geometric series. Therefore, an arbitrary precision $U_{G}$ can be selected and the number of terms $l$ of the polylogarithm partial sum to achieve that precision can be determined for a given value of $z$
+
+\begin{equation} \label{eq:48}
+l = -\frac{\log(U_{G} + 1)}{\log(z)}
 \end{equation}
 
 
