@@ -226,21 +226,21 @@ F_{m}&(E_{A}, E_{B}, T, \mu) = F_{m}(E_{A}, \infty, T, \mu) - F_{m}(E_{B}, \inft
 
 
 \section{Uncertainty analysis}
-The polylogarithm can be written in terms of an infinite series as in Eq. \ref{eq:22}. An algorithm to approximate the value of the polylogarithm is to simply compute and sum the first $l$ terms of the series and stop when the remainder of the series (the terms from $l+1$ and greater) is accepatably small.
+The polylogarithm can be written in terms of an infinite series as in Eq. \ref{eq:22}. One algorithm to approximate the value of the polylogarithm is to simply compute and sum the first $l$ terms of the series and stop when the remainder of the series (the terms from $l+1$ and greater) is accepatably small.
 
-Consider the polylogarithm written as the sum of two terms: the partial sum of the first $l$ terms and the remainder as in Eq. \ref{eq:34}
+Consider the polylogarithm written as the sum of two terms, the partial sum of the first $l$ terms and the remainder, as in Eq. \ref{eq:34}
 
 \begin{equation} \label{eq:34}
 \Li_{s}(z) = \Li_{s,l}^{lo}(z) + \Li_{s,l}^{high}(z), \qquad |z| < 1
 \end{equation}
 
-\noindent where
+\noindent where the partial sum is
 
 \begin{equation} \label{eq:35}
 \Li_{s,l}^{lo}(z) = \sum_{n = 1}^{l} \frac{z^{n}}{n^{s}}, \qquad |z| < 1
 \end{equation}
 
-\noindent and
+\noindent and the remainder is
 
 \begin{equation} \label{eq:36}
 \Li_{s,l}^{high}(z) = \sum_{n = l + 1}^{\infty} \frac{z^{n}}{n^{s}}, \qquad |z| < 1
@@ -253,9 +253,7 @@ Terms should be computed and summed until the ratio
 U = \frac{\Li_{s,l}^{lo}(z)}{\Li_{s,l}^{high}(z)}
 \end{equation}
 
-\noindent becomes large. when the ratio in Eq. \ref{eq:37} is large, the remainder, $\Li_{s,l}^{high}(z)$, is small relative to the partial sum $\Li_{s,l}^{lo}(z)$; the magnitude of this ratio determines the significance of the digits given in the decimal representation of $\Li_{s,l}^{lo}(z)$. For example, if the value of $U$ is on the order of $1 \times 10^{10}$, the remainder will only change digits in the $1 \times 10^{11}$ place and below in the decimal representation of the approximation to $\Li_{s}(z)$. Practically speaking, there is no need to compute the value of $\Li_{s}(z)$ to a higher precision than the precision to which the physical constants of Eq. \ref{eq:32} are known.
-
-The value of the uncertainty ratio $U$ can be bounded by bounding both the partial sum and remainder.
+\noindent becomes large. The magnitude of this ratio determines the significance of the digits given in the decimal representation of $\Li_{s,l}^{lo}(z)$. For example, if the value of $U$ is on the order of $1 \times 10^{10}$, the remainder will only change digits in the $1 \times 10^{11}$ place and below in the decimal representation of the approximation to $\Li_{s}(z)$. Practically speaking, there is no need to compute the value of $\Li_{s}(z)$ to a higher precision than the precision to which the physical constants of Eq. \ref{eq:32} are known. The value of the uncertainty ratio $U$ can be bounded by bounding both the partial sum and remainder of the polylogarithm.
 
 The remainder can be bounded above by a (hyper?)-geometric series. Consider the remainder 
 
@@ -289,7 +287,7 @@ $l+3$ & $\frac{z^{l+3}}{(l+3)^{s}}$ & $\frac{z^{l+3}}{(l+1)^{s}}$ \\
 ... & ... & ... \\
 \end{tabular}
 
-\noindent Therefore,
+\noindent therefore,
 
 \begin{equation} \label{eq:41}
 \Li_{s,l}^{high}(z) < \frac{G_{l}^{high}(z)}{(l+1)^{s}}
@@ -306,51 +304,53 @@ In addition, the partial sum of the lower terms of the polylogarithm series can 
 
 \begin{align} \label{eq:43}
 G_{l}^{lo}(z) &= \sum_{n = 1}^{l} z^{n} \\
- &= z^{1} + z^{2} + z^{3} + ... + z^{l}
+ &= z + z^{2} + z^{3} + ... + z^{l}
 \end{align}
 
-Divide the partial sum of the lower tems of the geometric series by $l^{s}$
+\noindent Dividing the partial sum of the lower tems of the geometric series by $(l+1)^{s}$ yields
 
 \begin{equation} \label{eq:44}
-\frac{G_{l}^{lo}(z)}{l^{s}} = \frac{z^{1}}{l^{s}} + \frac{z^{2}}{l^{s}} + \frac{z^{3}}{l^{s}} + ... + \frac{z^{l}}{l^{s}}
+\frac{G_{l}^{lo}(z)}{(l+1)^{s}} = \frac{z}{(l+1)^{s}} + \frac{z^{2}}{(l+1)^{s}} + \frac{z^{3}}{(l+1)^{s}} + ... + \frac{z^{l}}{(l+1)^{s}}
 \end{equation}
 
-Compare the terms from the two partial sums and note that each term from the polylogarithm series is greater than or equal to the corresponding term of the geometric series.
+Comparing the terms from the two partial sums it is clear that each term from the polylogarithm series is greater than or equal to the corresponding term of the geometric series.
 
 \begin{tabular}{ccc}
-$n$ & $\Li_{s,l}^{lo}(z)$ & $\frac{G_{l}^{lo}(z)}{l^{s}}$ \\
+$n$ & $\Li_{s,l}^{lo}(z)$ & $\frac{G_{l}^{lo}(z)}{(l+1)^{s}}$ \\
 \hline
-$1$ & $z$ & $\frac{z}{l^{s}}$ \\
-$2$ & $\frac{z^{2}}{2^{s}}$ & $\frac{z^{2}}{l^{s}}$ \\
-$3$ & $\frac{z^{3}}{3^{s}}$ & $\frac{z^{3}}{l^{s}}$ \\
+$1$ & $z$ & $\frac{z}{(l+1)^{s}}$ \\
+$2$ & $\frac{z^{2}}{2^{s}}$ & $\frac{z^{2}}{(l+1)^{s}}$ \\
+$3$ & $\frac{z^{3}}{3^{s}}$ & $\frac{z^{3}}{(l+1)^{s}}$ \\
 ... & ... & ... \\
-$l$ & $\frac{z^{l}}{l^{s}}$ & $\frac{z^{l}}{l^{s}}$ \\
+$l$ & $\frac{z^{l}}{l^{s}}$ & $\frac{z^{l}}{(l+1)^{s}}$ \\
 \end{tabular}
 
 \noindent Thus
 
 \begin{equation} \label{eq:45}
-\Li_{s,l}^{lo}(z) > \frac{G_{l}^{lo}(z)}{l^{s}}
+\Li_{s,l}^{lo}(z) > \frac{G_{l}^{lo}(z)}{(l+1)^{s}}
 \end{equation}
 
 Noting the inequalities of Eqs. \ref{eq:41} and \ref{eq:45}, the uncertainity ratio $U$ is bounded by
 
 \begin{equation} \label{eq:46}
-U > \frac{G_{l}^{lo}(z)}{G_{hi}^{lo}(z)} \frac{(l+1)^{s}}{l^{s}}
+U > \frac{G_{l}^{lo}(z)}{G_{hi}^{lo}(z)}
 \end{equation}
 
-\noindent which is to say that the uncertainty ratio of the polylogarithm will be better (higher) than the uncertainty ratio of the partial sum of a geometric series to its remainder. The numerator and denominator of Eq. \ref{eq:46} can be replaced and the expression simplified to
+\noindent which is to say that the uncertainty ratio of the polylogarithm will be better (higher) than the uncertainty ratio of the partial sum of a geometric series to its remainder. Expressions for the numerator and denominator of Eq. \ref{eq:46} are easily found and Eq. \ref{eq:46} can be simplified to
 
 \begin{equation} \label{eq:47}
-U > U_{G} = z^{-l} - 1
+U > z^{-l} - 1
 \end{equation}
 
-\noindent where $U_{G}$ is the uncertainty ratio of the geometric series. Therefore, an arbitrary precision $U_{G}$ can be selected and the number of terms $l$ of the polylogarithm partial sum to achieve that precision can be determined for a given value of $z$
+\noindent Therefore, an arbitrary precision $U$ can be selected and the number of terms $l$ of the polylogarithm partial sum to achieve that precision can be determined for a given value of $z$
 
-\begin{equation} \label{eq:48}
-l = -\frac{\log(U_{G} + 1)}{\log(z)}
-\end{equation}
+\begin{align} \label{eq:48}
+l &= -\frac{\log(U+ 1)}{\log(z)} \\
+ &\approx -\frac{\log(U)}{\log(z)}
+\end{align}
 
+\noindent where $\log$ is the logarithm base 10.
 
 
 \section{Acknowledgement}
