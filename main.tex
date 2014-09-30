@@ -41,7 +41,8 @@ pdfcreator={pdfTeX}
 % 10,11,12,13,14,15,16,17,18,19,
 % 20,21,22,23,24,25,26,27,28,29,
 % 30,31,32,33,34,35,36,37,38,39,
-% 40,41,42,43,44,45,46,47,48,
+% 40,41,42,43,44,45,46,47,48,49,
+% 50,51,
 % 
 % fig
 % ---
@@ -351,6 +352,27 @@ l &= -\frac{\log(U+ 1)}{\log(z)} \\
 \end{align}
 
 \noindent where $\log$ is the logarithm base 10. It is clear from Eq. \ref{eq:47} that high precision (high $U$) can be achieved from few terms (low $l$) of the polylogarithm partial sum approximation when the argument $z$ is small. Conversely, as the value of $z$ approachs unity, more terms in the polylogarithm partial sum approximation (high $l$) are required to achieve high precision (high $U$). Fig. \ref{} depicts the uncertainty ratio vs. teh number of terms in the partial sum approximation of the polylogarithm for a family of curves corresponding to different values of argument $z$.
+
+\subsection{Practical limit of precision}
+Practically speaking, no more than (VALUE) terms of the partial sum approximation will ever be required to be calculated because the precision of the value of the partial sum approximation is limited by the precision of the argument $z$. In the case examined by this paper, 
+
+\begin{equation} \label{eq:49}
+z = \exp \left( \frac{\mu - E_{A}}{kT} \right)
+\end{equation}
+
+Analyzing the uncertainty propagation following Taylor \cite{9780935702422}, the uncertainty, $\delta z$, in $z$ is
+
+\begin{equation} \label{eq:50}
+\delta z = \exp \left( \frac{\mu - E_{A}}{kT} \right) \left[\frac{(\delta \mu)^{2} + (\delta E_{A})^{2}}{(\mu - E_{A})^{2}} + \left( \frac{\delta k}{k} \right)^{2} + \left( \frac{\delta T}{T} \right)^{2} \right]^{1/2}
+\end{equation}
+
+\noindent Therefore the precision of $z$ is capped by the least precise quantity among $\mu$, $E_{A}$, $T$, and $k$. Of these quantities, Boltzmann's constant will almost certainly be the most precise. To determine the maximum number of terms required in the partial sum approximation of the polylogarithm, assume $\mu$, $E_{A}$, and $T$ are all known to absolute precision and therefore $k$ is the limiting quantity. According to NIST \cite{}, $k$ is known to (VALUE) precision. Therefore, Eq. \ref{eq:50} reduces to
+
+\begin{equation} \label{eq:51}
+\delta z = \exp \left( \frac{\mu - E_{A}}{kT} \right) \left| \frac{\delta k}{k} \right|
+\end{equation}
+
+\noindent and (VALUE) is the largest unambiguous value $z$ can acquire.
 
 
 \section{Acknowledgement}
