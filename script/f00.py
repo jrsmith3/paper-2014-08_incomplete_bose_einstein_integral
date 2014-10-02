@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import copy
 
 
-# Set up ordinates.
+# Set up abscissae.
 params = {"temp_sun": 6000.}
 bandgaps = np.linspace(0, 3.25, 100)
 
