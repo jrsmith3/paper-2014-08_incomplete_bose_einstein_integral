@@ -30,6 +30,8 @@
 
 # Misc ignores
 # ------------
+# virtualenv
+env
 
 
 # LaTeX makefile build dir
