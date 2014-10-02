@@ -23,6 +23,7 @@ def init_abscissa(params, abscissae, abscissa_name):
     for abscissa in abscissae:
         param_dict = copy.copy(params)
         param_dict[abscissa_name] = abscissa
+        param_dict["abscissa_name"] = abscissa_name
         dict_list.append(param_dict)
 
     return dict_list
