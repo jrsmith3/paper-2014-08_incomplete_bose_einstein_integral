@@ -249,7 +249,7 @@ Consider the polylogarithm written as the sum of two terms, the partial sum of t
 \end{equation}
 
 
-\\noindent Terms should be computed and summed until the ratio
+\noindent Terms should be computed and summed until the ratio
 
 \begin{equation} \label{eq:37}
 U = \frac{\Li_{s,l}^{lo}(z)}{\Li_{s,l}^{high}(z)}
@@ -348,14 +348,14 @@ U > z^{-l} - 1
 \noindent Therefore, an arbitrary precision $U$ can be selected and the number of terms $l$ of the polylogarithm partial sum to achieve that precision can be determined for a given value of $z$
 
 \begin{align} \label{eq:48}
-l &= -\frac{\log(U+ 1)}{\log(z)} \\
- &\approx -\frac{\log(U)}{\log(z)}
+l &= -\frac{\log_{10}(U+ 1)}{\log_{10}(z)} \\
+ &\approx -\frac{\log_{10}(U)}{\log_{10}(z)}
 \end{align}
 
-\noindent where $\log$ is the logarithm base 10. It is clear from Eq. \ref{eq:47} that high precision (high $U$) can be achieved from few terms (low $l$) of the polylogarithm partial sum approximation when the argument $z$ is small. Conversely, as the value of $z$ approachs unity, more terms in the polylogarithm partial sum approximation (high $l$) are required to achieve high precision (high $U$). %Fig. \ref{} depicts the uncertainty ratio vs. the number of terms in the partial sum approximation of the polylogarithm for a family of curves corresponding to different values of argument $z$.
+\noindent where $\log_{10}$ is the logarithm base 10. It is clear from Eq. \ref{eq:47} that high precision (high $U$) can be achieved from few terms (low $l$) of the polylogarithm partial sum approximation when the argument $z$ is small. Conversely, as the value of $z$ approachs unity, more terms in the polylogarithm partial sum approximation (high $l$) are required to achieve high precision (high $U$). %Fig. \ref{} depicts the uncertainty ratio vs. the number of terms in the partial sum approximation of the polylogarithm for a family of curves corresponding to different values of argument $z$.
 
 \subsection{Practical limit of precision}
-Practically speaking, no more than (VALUE) terms of the partial sum approximation will ever be required to be calculated because the precision of the value of the partial sum approximation is limited by the precision of the argument $z$. In the case examined by this paper, 
+Practically speaking, no more than about $1 \times 10^{6}$ terms of the partial sum approximation will ever be required to be calculated because the precision of the value of the partial sum approximation is limited by the precision of the argument $z$. In the case examined by this paper, 
 
 \begin{equation} \label{eq:49}
 z = \exp \left( \frac{\mu - E_{A}}{kT} \right)
