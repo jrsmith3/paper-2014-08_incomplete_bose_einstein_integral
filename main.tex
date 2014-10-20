@@ -68,7 +68,7 @@ The canonical incomplete Bose-Einstein integral is expressed in terms of a finit
 
 
 \section{Introduction}
-Computing photon energy and particle fluxes using the imcomplete Bose-Einstein integral is central to calculating the efficiency of efficiency limits of solar cells in the detailed balance limit \cite{10.1063/1.1736034}. This integral also appears in the calculation of the photo-enhanced thermoelectron emission (PETE) from materials \cite{10.1038/nmat2814}. Herein a solution to the incomplete Bose-Einstein integral is derived in terms of the polylogarithm function for the case of integer values of the exponent. The polylogarithm has the attractive property of rapid convergence via direct summation for small values of the argument \cite{http://academic.reed.edu/physics/faculty/crandall/papers/Polylog}; a property that will be exploited in this case to rapidly and precisely calculate the numerical value of the incomplete Bose-Einstein integral.
+Computing photon energy and particle fluxes using the incomplete Bose-Einstein integral is central to calculating the efficiency of efficiency limits of solar cells in the detailed balance limit \cite{10.1063/1.1736034}. This integral also appears in the calculation of the photo-enhanced thermoelectron emission (PETE) from materials \cite{10.1038/nmat2814}. Herein a solution to the incomplete Bose-Einstein integral is derived in terms of the polylogarithm function for the case of integer values of the exponent. The polylogarithm has the attractive property of rapid convergence via direct summation for small values of the argument \cite{http://academic.reed.edu/physics/faculty/crandall/papers/Polylog}; a property that will be exploited in this case to rapidly and precisely calculate the numerical value of the incomplete Bose-Einstein integral.
 
 
 \section{Calculation}
@@ -228,7 +228,7 @@ F_{m}&(E_{A}, E_{B}, T, \mu) = F_{m}(E_{A}, \infty, T, \mu) - F_{m}(E_{B}, \inft
 
 
 \section{Uncertainty analysis}
-The polylogarithm can be written in terms of an infinite series as in Eq. \ref{eq:22}. One algorithm to approximate the value of the polylogarithm is to simply compute and sum the first $l$ terms of the series and stop when the remainder of the series (the terms from $l+1$ and greater) is accepatably small.
+The polylogarithm can be written in terms of an infinite series as in Eq. \ref{eq:22}. One algorithm to approximate the value of the polylogarithm is to simply compute and sum the first $l$ terms of the series and stop when the remainder of the series (the terms from $l+1$ and greater) is acceptably small.
 
 Consider the polylogarithm written as the sum of two terms, the partial sum of the first $l$ terms and the remainder, as in Eq. \ref{eq:34}
 
@@ -309,7 +309,7 @@ G_{l}^{lo}(z) &= \sum_{n = 1}^{l} z^{n} \\
  &= z + z^{2} + z^{3} + ... + z^{l}
 \end{align}
 
-\noindent Dividing the partial sum of the lower tems of the geometric series by $(l+1)^{s}$ yields
+\noindent Dividing the partial sum of the lower terms of the geometric series by $(l+1)^{s}$ yields
 
 \begin{equation} \label{eq:44}
 \frac{G_{l}^{lo}(z)}{(l+1)^{s}} = \frac{z}{(l+1)^{s}} + \frac{z^{2}}{(l+1)^{s}} + \frac{z^{3}}{(l+1)^{s}} + ... + \frac{z^{l}}{(l+1)^{s}}
@@ -352,7 +352,7 @@ l &= -\frac{\log_{10}(U+ 1)}{\log_{10}(z)} \\
  &\approx -\frac{\log_{10}(U)}{\log_{10}(z)}
 \end{align}
 
-\noindent where $\log_{10}$ is the logarithm base 10. It is clear from Eq. \ref{eq:47} that high precision (high $U$) can be achieved from few terms (low $l$) of the polylogarithm partial sum approximation when the argument $z$ is small. Conversely, as the value of $z$ approachs unity, more terms in the polylogarithm partial sum approximation (high $l$) are required to achieve high precision (high $U$). %Fig. \ref{} depicts the uncertainty ratio vs. the number of terms in the partial sum approximation of the polylogarithm for a family of curves corresponding to different values of argument $z$.
+\noindent where $\log_{10}$ is the logarithm base 10. It is clear from Eq. \ref{eq:47} that high precision (high $U$) can be achieved from few terms (low $l$) of the polylogarithm partial sum approximation when the argument $z$ is small. Conversely, as the value of $z$ approaches unity, more terms in the polylogarithm partial sum approximation (high $l$) are required to achieve high precision (high $U$). %Fig. \ref{} depicts the uncertainty ratio vs. the number of terms in the partial sum approximation of the polylogarithm for a family of curves corresponding to different values of argument $z$.
 
 \subsection{Practical limit of precision}
 Practically speaking, no more than about $1 \times 10^{6}$ terms of the partial sum approximation will ever be required to be calculated because the precision of the value of the partial sum approximation is limited by the precision of the argument $z$. In the case examined by this paper, 
