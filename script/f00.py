@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Calculates data and creates image for f00
+
+This figure is a recreation of Shockley and Queisser's \ref{10.1063/1.1736034} Fig. 3; the efficiency vs. bandgap of a single junction solar cell.
 """
 import ibei
 import datac
