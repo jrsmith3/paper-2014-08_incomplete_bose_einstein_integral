@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Maximum efficiency of single junction solar cell according to Shockley and Queisser 
+Maximum efficiency of single junction solar cell according to DeVos
 """
 import ibei
 params = {"temp_sun": 5762.,
