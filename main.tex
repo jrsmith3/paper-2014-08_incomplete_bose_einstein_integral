@@ -42,7 +42,7 @@ pdfcreator={pdfTeX}
 % 20,21,22,23,24,25,26,27,28,29,
 % 30,31,32,33,34,35,36,37,38,39,
 % 40,41,42,43,44,45,46,47,48,49,
-% 50,51,
+% 50,51,52,53,
 % 
 % fig
 % ---
@@ -228,156 +228,27 @@ F_{m}&(E_{A}, E_{B}, T, \mu) = F_{m}(E_{A}, \infty, T, \mu) - F_{m}(E_{B}, \inft
 
 
 \section{Uncertainty analysis}
-The polylogarithm can be written in terms of an infinite series as in Eq. \ref{eq:22}. One algorithm to approximate the value of the polylogarithm is to simply compute and sum the first $l$ terms of the series and stop when the remainder of the series (the terms from $l+1$ and greater) is acceptably small.
+The precision of the upper-incomplete Bose-Einstein integral given in Eq. \ref{eq:32} is ultimately limited by the precision to which the physical constants are known. The expression of Eq. \ref{eq:32} is the product of two quantities: a coefficient (itself a product of several quantities) and a sum of a series of polylogarithms. The precision to which the series of polylogarithms are calculated is capped by the precision of the coefficient. Computing the value of the polylogarithm series to a precision much higher than the precision of the coefficient is a waste of resources since the subsequent multiplication by the coefficient will wash out any additional precision of the polylogarithm series calculation.
 
-Consider the polylogarithm written as the sum of two terms, the partial sum of the first $l$ terms and the remainder, as in Eq. \ref{eq:34}
+Let
 
-\begin{equation} \label{eq:34}
-\Li_{s}(z) = \Li_{s,l}^{lo}(z) + \Li_{s,l}^{high}(z), \qquad |z| < 1
+\begin{equation} \label{eq:52}
+C = \frac{2 \pi m! (kT)^{m+1}}{h^{3}c^{2}}
 \end{equation}
 
-\noindent where the partial sum is
+\noindent Analyzing the uncertainty of the coefficient following Taylor \cite{9780935702422} yields
 
-\begin{equation} \label{eq:35}
-\Li_{s,l}^{lo}(z) = \sum_{n = 1}^{l} \frac{z^{n}}{n^{s}}, \qquad |z| < 1
+\begin{equation} \label{eq:53}
+\frac{\delta C}{|C|} = \left[ (m+1) \left( \frac{\delta k}{k} \right)^{2} + 3 \left( \frac{\delta h}{h} \right)^{2} + 2 \left( \frac{\delta c}{c} \right)^{2} \right]^{1/2}
 \end{equation}
 
-\noindent and the remainder is
+\noindent assuming the quantities 2 and $m$ are known to perfect precision, the value of $\pi$ is known to a precision dramatically exceeding that of the physical constants \cite{}, and making the generous assumption that $T$ is known to a precision that doesn't limit the precision of $C$. Since the relative precision of the coefficient $C$ is (VALUE), the series sum of polylogarithms do not need to exceed that value of precision.
 
-\begin{equation} \label{eq:36}
-\Li_{s,l}^{high}(z) = \sum_{n = l + 1}^{\infty} \frac{z^{n}}{n^{s}}, \qquad |z| < 1
-\end{equation}
-
-
-\noindent Terms should be computed and summed until the ratio
-
-\begin{equation} \label{eq:37}
-U = \frac{\Li_{s,l}^{lo}(z)}{\Li_{s,l}^{high}(z)}
-\end{equation}
-
-\noindent becomes large. The magnitude of this ratio determines the significance of the digits given in the decimal representation of $\Li_{s,l}^{lo}(z)$. For example, if the value of $U$ is on the order of $1 \times 10^{10}$, the remainder will only change digits in the $1 \times 10^{11}$ place and below in the decimal representation of the approximation to $\Li_{s}(z)$. Practically speaking, there is no need to compute the value of $\Li_{s}(z)$ to a higher precision than the precision to which the physical constants of Eq. \ref{eq:32} are known. The value of the uncertainty ratio $U$ can be bounded by bounding both the partial sum and remainder of the polylogarithm.
-
-The remainder can be bounded above by a geometric series. Consider the remainder 
-
-\begin{align} \label{eq:38}
-\Li_{s,l}^{high}(z) &= \sum_{n = l + 1}^{\infty} \frac{z^{n}}{n^{s}} \\
- &= \frac{z^{l+1}}{(l+1)^{s}} + \frac{z^{l+2}}{(l+2)^{s}} + \frac{z^{l+3}}{(l+3)^{s}} + ...
-\end{align}
-
-\noindent This series is bounded above by the corresponding terms of the geometric series
-
-\begin{align} \label{eq:39}
-G_{l}^{high}(z) &= \sum_{n = l + 1}^{\infty} z^{n} \\
- &= z^{l+1} + z^{l+2} + z^{l+3} + ...
-\end{align}
-
-\noindent This upper bound can be further lowered by dividing through by $(l + 1)^{s}$
-
-\begin{align} \label{eq:40}
-\frac{G_{l}^{high}(z)}{(l+1)^{s}} = 
-\frac{z^{l+1}}{(l+1)^{s}} + \frac{z^{l+2}}{(l+1)^{s}} + \frac{z^{l+3}}{(l+1)^{s}} + ...
-\end{align}
-
-It is clear from the following table that the terms from the remainder of the polylogarithm sum are less than the corresponding terms from the reduced geometric series 
-
-\begin{tabular}{ccc}
-$n$ & $\Li_{s,l}^{high}(z)$ & $\frac{G_{l}^{high}(z)}{(l+1)^{s}}$ \\
-\hline
-$l+1$ & $\frac{z^{l+1}}{(l+1)^{s}}$ & $\frac{z^{l+1}}{(l+1)^{s}}$ \\
-$l+2$ & $\frac{z^{l+2}}{(l+2)^{s}}$ & $\frac{z^{l+2}}{(l+1)^{s}}$ \\
-$l+3$ & $\frac{z^{l+3}}{(l+3)^{s}}$ & $\frac{z^{l+3}}{(l+1)^{s}}$ \\
-... & ... & ... \\
-\end{tabular}
-
-\noindent therefore,
-
-\begin{equation} \label{eq:41}
-\Li_{s,l}^{high}(z) < \frac{G_{l}^{high}(z)}{(l+1)^{s}}
-\end{equation}
-
-In addition, the partial sum of the lower terms of the polylogarithm series can be bounded below by the corresponding terms of a partial geometric series. Consider the partial sum of the polylogarithm series
-
-\begin{align} \label{eq:42}
-\Li_{s,l}^{lo}(z) &= \sum_{n = 1}^{l} \frac{z^{n}}{n^{s}} \\
- &= z + \frac{z^{2}}{2^{s}} + \frac{z^{3}}{3^{s}} + ... + \frac{z^{l}}{l^{s}}
-\end{align}
-
-\noindent Consider also the corresponding terms of the geometric series
-
-\begin{align} \label{eq:43}
-G_{l}^{lo}(z) &= \sum_{n = 1}^{l} z^{n} \\
- &= z + z^{2} + z^{3} + ... + z^{l}
-\end{align}
-
-\noindent Dividing the partial sum of the lower terms of the geometric series by $(l+1)^{s}$ yields
-
-\begin{equation} \label{eq:44}
-\frac{G_{l}^{lo}(z)}{(l+1)^{s}} = \frac{z}{(l+1)^{s}} + \frac{z^{2}}{(l+1)^{s}} + \frac{z^{3}}{(l+1)^{s}} + ... + \frac{z^{l}}{(l+1)^{s}}
-\end{equation}
-
-Comparing the terms from the two partial sums it is clear that each term from the polylogarithm series is greater than or equal to the corresponding term of the geometric series.
-
-\begin{tabular}{ccc}
-$n$ & $\Li_{s,l}^{lo}(z)$ & $\frac{G_{l}^{lo}(z)}{(l+1)^{s}}$ \\
-\hline
-$1$ & $z$ & $\frac{z}{(l+1)^{s}}$ \\
-$2$ & $\frac{z^{2}}{2^{s}}$ & $\frac{z^{2}}{(l+1)^{s}}$ \\
-$3$ & $\frac{z^{3}}{3^{s}}$ & $\frac{z^{3}}{(l+1)^{s}}$ \\
-... & ... & ... \\
-$l$ & $\frac{z^{l}}{l^{s}}$ & $\frac{z^{l}}{(l+1)^{s}}$ \\
-\end{tabular}
-
-\noindent Thus
-
-\begin{equation} \label{eq:45}
-\Li_{s,l}^{lo}(z) > \frac{G_{l}^{lo}(z)}{(l+1)^{s}}
-\end{equation}
-
-Noting the inequalities of Eqs. \ref{eq:41} and \ref{eq:45}, the uncertainity ratio $U$ is bounded by
-
-\begin{equation} \label{eq:46}
-U > \frac{G_{l}^{lo}(z)}{G_{l}^{high}(z)}
-\end{equation}
-
-\noindent which is to say that the uncertainty ratio of the polylogarithm will be better (higher) than the uncertainty ratio of the partial sum of a geometric series to its remainder. Expressions for the numerator and denominator of Eq. \ref{eq:46} are easily found and Eq. \ref{eq:46} can be simplified to
-
-\begin{equation} \label{eq:47}
-U > z^{-l} - 1
-\end{equation}
-
-\noindent Therefore, an arbitrary precision $U$ can be selected and the number of terms $l$ of the polylogarithm partial sum to achieve that precision can be determined for a given value of $z$
-
-\begin{align} \label{eq:48}
-l &= -\frac{\log_{10}(U+ 1)}{\log_{10}(z)} \\
- &\approx -\frac{\log_{10}(U)}{\log_{10}(z)}
-\end{align}
-
-\noindent where $\log_{10}$ is the logarithm base 10. It is clear from Eq. \ref{eq:47} that high precision (high $U$) can be achieved from few terms (low $l$) of the polylogarithm partial sum approximation when the argument $z$ is small. Conversely, as the value of $z$ approaches unity, more terms in the polylogarithm partial sum approximation (high $l$) are required to achieve high precision (high $U$). %Fig. \ref{} depicts the uncertainty ratio vs. the number of terms in the partial sum approximation of the polylogarithm for a family of curves corresponding to different values of argument $z$.
-
-\subsection{Practical limit of precision}
-Practically speaking, no more than about $1 \times 10^{6}$ terms of the partial sum approximation will ever be required to be calculated because the precision of the value of the partial sum approximation is limited by the precision of the argument $z$. In the case examined by this paper, 
-
-\begin{equation} \label{eq:49}
-z = \exp \left( \frac{\mu - E_{A}}{kT} \right)
-\end{equation}
-
-Analyzing the uncertainty propagation following Taylor \cite{9780935702422}, the uncertainty, $\delta z$, in $z$ is
-
-\begin{equation} \label{eq:50}
-\delta z = \exp \left( \frac{\mu - E_{A}}{kT} \right) \left[\frac{(\delta \mu)^{2} + (\delta E_{A})^{2}}{(\mu - E_{A})^{2}} + \left( \frac{\delta k}{k} \right)^{2} + \left( \frac{\delta T}{T} \right)^{2} \right]^{1/2}
-\end{equation}
-
-\noindent Therefore the precision of $z$ is capped by the least precise quantity among $\mu$, $E_{A}$, $T$, and $k$. Of these quantities, Boltzmann's constant will almost certainly be the most precise. To determine the maximum number of terms required in the partial sum approximation of the polylogarithm, assume $\mu$, $E_{A}$, and $T$ are all known to absolute precision and therefore $k$ is the limiting quantity. The relative standard uncertainty of $k$ is $9.1 \times 10^{-6}$ \cite{10.1103/RevModPhys.84.1527}. Therefore, Eq. \ref{eq:50} reduces to
-
-\begin{equation} \label{eq:51}
-\delta z = \exp \left( \frac{\mu - E_{A}}{kT} \right) \left| \frac{\delta k}{k} \right|
-\end{equation}
-
-\noindent and 0.99999 is the largest unambiguous value $z$ can acquire.
+The python package \texttt{mpmath} \cite{} implements \cite{} Crandall's fast polylogarithm computation algorithm \cite{http://academic.reed.edu/physics/faculty/crandall/papers/Polylog}. This algorithm resolves the polylogarithm at a rate of about 1 precision bit per loop iteration in the worst case would therefore require (VALUE) iterations to achieve comparable relative precision to the coefficient. Such computuations can easily be executed on commodity computing hardware.
 
 
 \section{Results}
-The incomplete Bose-Einstein integral was implemented in python as a module \cite{}. The output of the calculation was compared against previously reported values of the efficiencies of a single-junction solar cells. Shockley and Queisser \cite{10.1063/1.1736034} reported the maximum efficiency of a single-junction solar cell is 44\% and has a bandgap of 1.1eV, assuming a solar temperature of 6000K. Using the derivation presented in this paper, an efficiency of 44\% was obtained under identical conditions in good agreement with Shockley and Queisser. In addition, the efficiency vs. bandgap was calculated using the derivation presented in this paper and the result is depicted in Fig. \ref{fig:00}; this figure matches Shockley and Queisser's Fig. 3 \cite{10.1063/1.1736034}.
+The incomplete Bose-Einstein integral was implemented in python as a module \cite{} which depends on the \texttt{mpmath} module via the \texttt{sympy} module. The output of the calculation was compared against previously reported values of the efficiencies of a single-junction solar cells. Shockley and Queisser \cite{10.1063/1.1736034} reported the maximum efficiency of a single-junction solar cell is 44\% and has a bandgap of 1.1eV, assuming a solar temperature of 6000K. Using the derivation presented in this paper, an efficiency of 44\% was obtained under identical conditions in good agreement with Shockley and Queisser. In addition, the efficiency vs. bandgap was calculated using the derivation presented in this paper and the result is depicted in Fig. \ref{fig:00}; this figure matches Shockley and Queisser's Fig. 3 \cite{10.1063/1.1736034}.
 
 
 \begin{figure}
