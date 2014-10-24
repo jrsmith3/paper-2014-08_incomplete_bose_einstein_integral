@@ -239,10 +239,10 @@ C = \frac{2 \pi m! (kT)^{m+1}}{h^{3}c^{2}}
 \noindent Analyzing the uncertainty of the coefficient following Taylor \cite{9780935702422} yields
 
 \begin{equation} \label{eq:53}
-\frac{\delta C}{|C|} = \left[ (m+1) \left( \frac{\delta k}{k} \right)^{2} + 3 \left( \frac{\delta h}{h} \right)^{2} + 2 \left( \frac{\delta c}{c} \right)^{2} \right]^{1/2}
+\frac{\delta C}{|C|} = \left[ (m+1) \left( \frac{\delta k}{k} \right)^{2} + 3 \left( \frac{\delta h}{h} \right)^{2} \right]^{1/2}
 \end{equation}
 
-\noindent assuming the quantities 2 and $m$ are known to perfect precision, the value of $\pi$ is known to a precision dramatically exceeding that of the physical constants \cite{http://www.numberworld.org/misc_runs/pi-12t}, and making the generous assumption that $T$ is known to a precision that doesn't limit the precision of $C$. Since the relative precision of the coefficient $C$ is (VALUE), the series sum of polylogarithms do not need to exceed that value of precision.
+\noindent assuming the quantities 2 and $m$ are known to perfect precision, the value of $\pi$ is known to a precision dramatically exceeding that of the physical constants \cite{http://www.numberworld.org/misc_runs/pi-12t}, and making the generous assumption that $T$ is known to a precision that doesn't limit the precision of $C$. The relative precision of the coefficient $C$ is, at best, on the order of $1 \times 10^{7}$, based on the most recent CODATA values \cite{10.1103/RevModPhys.84.1527}. Therefore, the series sum of polylogarithms do not need to exceed that value of precision.
 
 The python package \texttt{mpmath} \cite{mpmath} implements Crandall's fast polylogarithm computation algorithm \cite{http://academic.reed.edu/physics/faculty/crandall/papers/Polylog}. This algorithm resolves the polylogarithm at a rate of about 1 precision bit per loop iteration in the worst case would therefore require (VALUE) iterations to achieve comparable relative precision to the coefficient. Such computuations can easily be executed on commodity computing hardware.
 
