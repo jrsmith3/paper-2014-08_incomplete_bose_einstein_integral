@@ -70,6 +70,10 @@ The upper incomplete Bose-Einstein integral is expressed in terms of a finite su
 \section{Introduction}
 Computing photon energy and particle fluxes using the incomplete Bose-Einstein integral is central to calculating the efficiency limits of solar cells in the detailed balance limit \cite{10.1063/1.1736034}. This integral also appears in the calculation of the photo-enhanced thermoelectron emission (PETE) from materials \cite{10.1038/nmat2814}. Herein a solution to the upper incomplete Bose-Einstein integral is derived in terms of the polylogarithm function for the case of integer values of the exponent. The polylogarithm has the attractive property of rapid convergence \cite{http://academic.reed.edu/physics/faculty/crandall/papers/Polylog}; a property that will be exploited in this case to rapidly and precisely calculate the numerical value of the incomplete Bose-Einstein integral.
 
+Despite the ubiquity and importance of determining the upper incomplete Bose-Einstein integral, it appears that many researchers have employed ad-hoc methods up until Levy and Honsberg \cite{10.1016/j.sse.2006.06.017}. Levy and Honsberg's derivation is given in terms of linear combinations of incomplete Riemann zeta integrals and is mathematically rigorous, but difficult to implement. The present derivation is given in terms of a sum of polylogarithms and the implementation is much more straightforward.
+
+Upon considering solutions to the upper incomplete Bose-Einstein integral, the mind is immediately drawn to consider the incomplete Fermi-Dirac integral. To satisfy the reader's curiosity, Goano has derived algorithms to calculate the complete and incomplete Fermi-Dirac integrals \cite{10.1145/210089.210090}.
+
 
 \section{Calculation}
 The upper incomplete Bose-Einstein integral is given as
