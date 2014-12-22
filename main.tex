@@ -245,8 +245,16 @@ The incomplete Bose-Einstein integral was implemented in python as a module \cit
 DeVos \cite{9780198513926} reported a maximum efficiency of 40.8\% for a single-junction solar cell of bandgap 1.15eV illuminated by fully concentrated sunlight of temperature 5762K. An efficiency of 40.5\% was calculated using the derivation described in this paper under identical conditions and assuming the temperature of Earth is 289K.
 
 
+\section{Conclusion}
+The upper incomplete Bose-Einstein integral was written in terms of a finite sum of a series of polylogarithm functions. This result reduces to Wood's expression in the case of the complete Bose-Einstein integral. 
+
+It was shown that the precision of any calculation of the upper incomplete Bose-Einstein integral is limited to the precision to which Boltzmann's and Planck's constants are known. Thus, practical values of the upper incomplete Bose-Einstein integral can be obtained in short order on commodity computing hardware based on the rapid convergence of modern algorithms used to calculate polylogarithms.
+
+The upper incomplete Bose-Einstein integral was implemented as a python module based on the \texttt{mpmath} package included in the \texttt{sympy} package. This implementation was used to recover well-known results of solar cell efficiency published by Shockley and Queisser and DeVos.
+
+
 \section{Colophon}
-The model was implemented as a module written in python. Revision 1.0.0 \cite{10.6084/m9.figshare.1229713} of the software implementing the model was used for the calculations in this manuscript along with \texttt{sympy} version 0.7.3, \texttt{numpy} version 1.7.0, \texttt{matplotlib} version 1.3.1, and python version 2.7.7 -- all included with Continuum Analytics's Anaconda distribution version 3.5.5.  The code was executed on a MacBook Air model A1466 running OS X 10.9.5, Darwin kernel version 13F34 with a 2GHz Intel core i7 and 8GB 1600 MHz DDR3 memory.
+The model was implemented as a module written in python. Revision 1.0.0 \cite{10.6084/m9.figshare.1229713} of the software implementing the model was used for the calculations in this manuscript along with \texttt{sympy} version 0.7.3, \texttt{numpy} version 1.7.0, \texttt{matplotlib} version 1.3.1, and python version 2.7.7 -- all included with Continuum Analytics's Anaconda distribution version 3.5.5. The code developed for this paper is licensed under an open source license and reuse is encouraged. Programs were executed on a MacBook Air model A1466 running OS X 10.9.5, Darwin kernel version 13F34 with a 2GHz Intel core i7 and 8GB 1600 MHz DDR3 memory.
 
 
 \section{Acknowledgements}
