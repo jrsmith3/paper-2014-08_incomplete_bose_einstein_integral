@@ -16,7 +16,7 @@
 
 % Document metadata
 % =================
-\newcommand{\Title}{Analytic solution to the incomplete Bose-Einstein integral}
+\newcommand{\Title}{Analytic solution to the upper incomplete Bose-Einstein integral}
 \newcommand{\AuthorName}{Joshua Ryan Smith}
 \newcommand{\AuthorEmail}{joshua.smith133.ctr@mail.mil}
 
@@ -63,12 +63,12 @@ pdfcreator={pdfTeX}
 
 
 \begin{abstract}
-The canonical incomplete Bose-Einstein integral is expressed in terms of a finite sum of polylogarithm functions.
+The canonical upper incomplete Bose-Einstein integral is expressed in terms of a finite sum of polylogarithm functions.
 \end{abstract}
 
 
 \section{Introduction}
-Computing photon energy and particle fluxes using the incomplete Bose-Einstein integral is central to calculating the efficiency of efficiency limits of solar cells in the detailed balance limit \cite{10.1063/1.1736034}. This integral also appears in the calculation of the photo-enhanced thermoelectron emission (PETE) from materials \cite{10.1038/nmat2814}. Herein a solution to the incomplete Bose-Einstein integral is derived in terms of the polylogarithm function for the case of integer values of the exponent. The polylogarithm has the attractive property of rapid convergence \cite{http://academic.reed.edu/physics/faculty/crandall/papers/Polylog}; a property that will be exploited in this case to rapidly and precisely calculate the numerical value of the incomplete Bose-Einstein integral.
+Computing photon energy and particle fluxes using the incomplete Bose-Einstein integral is central to calculating the efficiency limits of solar cells in the detailed balance limit \cite{10.1063/1.1736034}. This integral also appears in the calculation of the photo-enhanced thermoelectron emission (PETE) from materials \cite{10.1038/nmat2814}. Herein a solution to the upper incomplete Bose-Einstein integral is derived in terms of the polylogarithm function for the case of integer values of the exponent. The polylogarithm has the attractive property of rapid convergence \cite{http://academic.reed.edu/physics/faculty/crandall/papers/Polylog}; a property that will be exploited in this case to rapidly and precisely calculate the numerical value of the incomplete Bose-Einstein integral.
 
 
 \section{Calculation}
@@ -217,17 +217,6 @@ F_{m}(\ldots) &= \frac{2\pi (kT)^{m+1}}{h^{3} c^{2}} \sum_{n = 1}^{\infty} \exp(
 \end{align}
 
 \noindent after re-indexing the sum over $j$ to one over $s$ where $s = m - j + 1$. It is appropriate to replace the sum with the polylogarithm function as given in Eq. \ref{eq:22} since, again, $u < x$ and therefore $\exp(u-x) < 1$. Thus, the upper incomplete Bose-Einstein integral has been expressed in terms of a finite sum of polylogarithm functions of integer order and real argument.
-
-\subsection{Incomplete Bose-Einstein integral}
-The incomplete Bose-Einstein integral given in Eq. \ref{eq:26} can be expressed as a difference of two upper-incomplete Bose-Einstein integrals evaluated at different limits.
-
-\begin{align} \label{eq:33}
-F_{m}&(E_{A}, E_{B}, T, \mu) = F_{m}(E_{A}, \infty, T, \mu) - F_{m}(E_{B}, \infty, T, \mu) \nonumber \\
- &= \frac{2\pi m! (kT)^{m+1}}{h^{3} c^{2}} \sum_{s = 1}^{m+1} \frac{1}{(m-s+1)!} \left( x_{A}^{m-s+1} \Li_{s} \left( \exp(u-x_{A}) \right) - x_{B}^{m-s+1} \Li_{s} \left( \exp(u-x_{B}) \right)
-\right)
-\end{align}
-
-\noindent where $x_{B} = E_{B}/kT$.
 
 
 \section{Uncertainty analysis}
