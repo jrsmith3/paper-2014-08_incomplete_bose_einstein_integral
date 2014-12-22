@@ -2,13 +2,14 @@
 % (joshua.r.smith@gmail.com). The template can be found in the git repo at:
 % http://github.com/jrsmith3/latex_template
 
-\documentclass[letterpaper,12pt]{article}
+% \documentclass[aps,prx,preprint]{revtex4-1}
+\documentclass[aps,prx,reprint]{revtex4-1}
 
 % Document graphics and formatting
 % ================================
 \usepackage{graphicx}
 \graphicspath{{img/}{build/}}
-\usepackage{showkeys}
+% \usepackage{showkeys}
 % \usepackage{endfloat}
 % \usepackage{url}
 \usepackage{amsmath}
@@ -54,17 +55,20 @@ pdfcreator={pdfTeX}
 % tab
 % ---
 
-\title{\Title}
-\author{\AuthorName}
-
 \begin{document}
 
-\maketitle
+\title{\Title}
+\author{\AuthorName}
+\email{\AuthorEmail}
+\affiliation{US Army Research Laboratory}
 
 
 \begin{abstract}
 The upper incomplete Bose-Einstein integral is expressed in terms of a finite sum of polylogarithm functions.
 \end{abstract}
+
+
+\maketitle
 
 
 \section{Introduction}
