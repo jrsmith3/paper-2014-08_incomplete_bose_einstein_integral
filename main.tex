@@ -72,7 +72,7 @@ Computing photon energy and particle fluxes using the incomplete Bose-Einstein i
 
 
 \section{Calculation}
-Levy and Honsberg \cite{10.1016/j.sse.2006.06.017} give the incomplete Bose-Einstein integral as in Eq. \ref{eq:26}
+Levy and Honsberg \cite{10.1016/j.sse.2006.06.017} give the incomplete Bose-Einstein integral as 
 
 \begin{equation} \label{eq:26}
 F_{m}(E_{A},E_{B},T,\mu) = \frac{2 \pi}{h^{3}c^{2}} \int_{E_{A}}^{E_{B}} E^{m} \frac{1}{\exp \left( \frac{E - \mu}{kT} \right) - 1} dE 
@@ -90,11 +90,14 @@ F_{m}(E_{A},E_{B},T,\mu) = \frac{2 \pi}{h^{3}c^{2}} \int_{E_{A}}^{E_{B}} E^{m} \
 
 % \noindent where $c$ is the speed of light in vacuum, $h$ is Planck's constant, $k$ is Boltzmann's constant, and $\nu$ is the frequency of a photon.
 
-In the following derivation, the incomplete Bose-Einstein integral given in Eq. \ref{eq:26} will be expressed in terms of the polylogarithm function of integer order and real argument. The polylogarithm is defined in Eq. \ref{eq:22}. First, the upper incomplete Bose-Einstein integral will be calculated -- that is, with limits from $E_{A}$ to $\infty$. The resulting expression will be used to calculate the incomplete Bose-Einstein integral given in Eq. \ref{eq:26} from $E_{A}$ to $E_{B}$.
+In the following derivation, the incomplete Bose-Einstein integral given in Eq. \ref{eq:26} will be expressed in terms of the polylogarithm function of integer order and real argument. The polylogarithm is defined as
 
 \begin{equation} \label{eq:22}
 \Li_{s}(z) = \sum_{n = 1}^{\infty} \frac{z^{n}}{n^{s}}, \qquad |z| < 1
 \end{equation}
+
+First, the upper incomplete Bose-Einstein integral will be calculated -- that is, with limits from $E_{A}$ to $\infty$. The resulting expression will be used to calculate the incomplete Bose-Einstein integral given in Eq. \ref{eq:26} from $E_{A}$ to $E_{B}$.
+
 
 \subsection{Upper-incomplete Bose-Einstein integral}
 Consider the upper incomplete Bose-Einstein integral given in Eq. \ref{eq:27} with the variables changed such that
@@ -131,7 +134,7 @@ The geometric series can be rearranged in order to replace the fractional term o
 \frac{1}{1-r} = \sum_{n = 0}^{\infty} r^{n}, \qquad |r| < 1
 \end{equation}
 
-\noindent Moving the first term of the sum to the left hand side and simplifying yields
+\noindent Multiplying both sides by $r$ and simplifying yields
 
 \begin{equation} \label{eq:04}
 \frac{r}{1-r} = \sum_{n = 1}^{\infty} r^{n}, \qquad |r| < 1
