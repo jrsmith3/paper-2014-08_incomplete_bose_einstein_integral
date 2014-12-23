@@ -30,16 +30,21 @@ import ibei
 import datac
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 import copy
 import os
+
+mpl.rcParams["font.size"] = 8
 
 # Overload the `Datac.plot` method to give me what I want
 class f00(datac.Datac):
     def plot(self):
-        fig = plt.figure(figsize=(5.,4.))
+        fig = plt.figure(figsize=(3.4,3.))
         plt.plot(self.abscissae, self.ordinates)
         plt.xlabel("Bandgap [eV]")
         plt.ylabel("Efficiency")
+
+        plt.gcf().tight_layout()
 
 
 script_abspath = os.path.dirname(os.path.abspath(__file__))
