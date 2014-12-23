@@ -41,9 +41,16 @@ class f00(datac.Datac):
     def plot(self):
         fig = plt.figure(figsize=(3.4,3.))
         plt.plot(self.abscissae, self.ordinates)
+
+        # ticks
+        plt.xticks(np.arange(4.))
+        plt.yticks([0.1, 0.2, 0.3, 0.4])
+
+        # labels
         plt.xlabel("Bandgap [eV]")
         plt.ylabel("Efficiency")
 
+        # adjust so everything is visible
         plt.gcf().tight_layout()
 
 
