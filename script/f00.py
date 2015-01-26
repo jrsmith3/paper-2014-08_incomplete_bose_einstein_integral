@@ -63,7 +63,7 @@ data_filename = script_filename_root + ".dat"
 data_dir_relpath = "dat"
 datafile_fqpn = os.path.join(parent_repo_abspath, data_dir_relpath, data_filename)
 
-fig_filename = script_filename_root + ".pdf"
+fig_filename = script_filename_root + ".eps"
 build_dir_relpath = "build"
 figfile_fqpn = os.path.join(parent_repo_abspath, build_dir_relpath, fig_filename)
 
