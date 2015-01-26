@@ -1,5 +1,5 @@
 Dear Editors,
-I am submitting the manuscript entitled, "Analytic solution to the upper incomplete Bose-Einstein integral," to Physical Review X for review for publication. 
+I am submitting the manuscript entitled, "Analytic solution to the upper incomplete Bose-Einstein integral," to AIP Advances for review for publication. 
 
 Computing the value of the upper incomplete Bose-Einstein integral is central to calculating the efficiency limits of solar cells in the detailed balance limit. In this manuscript, the upper incomplete Bose-Einstein integral is expressed as a finite sum of polylogarithm functions. Polylogarithms have the attractive property of rapid convergence, resulting in rapid and precise calculations of such quantities as photon number flux and photon energy flux from semiconductors at finite temperatures.
 
